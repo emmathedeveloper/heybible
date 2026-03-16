@@ -2,6 +2,7 @@ import { BrowserWindow, ipcMain } from 'electron'
 import path from 'node:path'
 import { RENDERER_DIST, VITE_DEV_SERVER_URL } from './main'
 import { fileURLToPath } from 'node:url'
+import { AISession, createBlob, endAISession, startAISession } from './ai'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -53,7 +54,21 @@ export function createProjectorWindow() {
 
 export const listenToIPC = () => {
 
-  ipcMain.on('start-ai-session', (_, data) => {
+  ipcMain.on('start-ai-session', (_) => {
     createProjectorWindow()
+
+    startAISession(windows)
+  })
+
+  ipcMain.on('end-ai-session', (_) => {
+    endAISession()
+  })
+
+  ipcMain.on('audio-chunk' , (_ , { audioData }) => {
+    if(AISession) AISession.sendRealtimeInput({ media: createBlob(audioData) })
+  })
+
+  ipcMain.on("message:projector" , (_ , { type , verse }) => {
+    windows.projector?.webContents.send(type , { verse })
   })
 }

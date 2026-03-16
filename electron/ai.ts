@@ -1,8 +1,7 @@
-import { GoogleGenAIOptions, GoogleGenAI, LiveConnectConfig, Modality, Type, LiveServerMessage, FunctionResponse } from "@google/genai";
-import { AppWindows } from "./window-management";
+import { GoogleGenAIOptions, GoogleGenAI, LiveConnectConfig, Modality, Type, LiveServerMessage, FunctionResponse, Session, Blob } from "@google/genai";
+import { AppWindows, windows } from "./window-management";
 
-
-
+export let AISession: Session | undefined
 
 export const startAISession = async (windows: AppWindows) => {
 
@@ -10,7 +9,7 @@ export const startAISession = async (windows: AppWindows) => {
 
     const options: GoogleGenAIOptions = {
         vertexai: false,
-        apiKey: import.meta.env.GOOGLE_API_KEY,
+        apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
 
     };
     const model = 'gemini-2.5-flash-native-audio-preview-12-2025';
@@ -128,7 +127,7 @@ Parameters:
         ],
     };
 
-    const session = await ai.live.connect({
+    AISession = await ai.live.connect({
         model: model,
         config,
         callbacks: {
@@ -160,7 +159,7 @@ Parameters:
                                     verse
                                 }
 
-                                // result = await getBiblePassage(book, chapter, verse);
+                                console.log(result)
 
                                 windows.main?.webContents.send("get-bible-passage" , { book , chapter , verse })
                                 
@@ -190,7 +189,7 @@ Parameters:
                         }
 
                         // Send all tool results back to the session
-                        session.sendToolResponse({ functionResponses: toolResponses });
+                        AISession?.sendToolResponse({ functionResponses: toolResponses });
                     }
                 }
 
@@ -232,4 +231,18 @@ Parameters:
             },
         },
     });
+}
+
+export function endAISession(){
+    if(AISession){
+        AISession.close()
+
+        windows.projector?.close()
+
+        AISession = undefined
+    }
+}
+
+export function createBlob(audioData: string): Blob {
+  return { data: audioData, mimeType: 'audio/pcm;rate=16000' };
 }

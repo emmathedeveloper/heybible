@@ -1,6 +1,6 @@
-import { create, createStore, useStore } from "zustand";
+import { create } from "zustand";
 
-type Verse = {
+export type Verse = {
     book_id: string,
     book_name: string,
     chapter: number,
@@ -16,10 +16,12 @@ type BibleStoreType = {
 
     currentVerse: Verse | null
 
-    getBiblePassage: (book: string, chapter: number, verse?: number) => Promise<any>
+    getBiblePassage: (book: string, chapter: number, verse?: number) => Promise<Verse>,
+    navigateToVerse: (direction: 'next' | 'previous' | 'jump', steps: number, target_verse?: number) => void,
+    setBibleVersion: (version: string) => void
 }
 
-const BibleCache = new Map<string , Verse[]>()
+const BibleCache = new Map<string, Verse[]>()
 
 const useBibleStore = create<BibleStoreType>((set, get) => ({
 
@@ -29,47 +31,61 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
     currentVerseNumber: 1,
 
     currentVerse: null,
-    
+
 
 
     async getBiblePassage(book: string, chapter: number, verse?: number) {
         try {
 
-            
+
             const { activeVersion } = get()
 
             const cache = BibleCache.get(`${book}:${chapter}:${activeVersion}`)
-
-            if(cache) {
-                console.log("Cache Exists")
-            }
-
+            
             const verseNum = verse ?? 1;
             const ref = `${book}+${chapter}`;
+
+            if (cache) {
+                const foundVerse = cache.find((v: Verse) => v.verse == verseNum)
+
+                console.log(foundVerse)
+
+                set({
+                    currentBook: book,
+                    currentChapter: chapter,
+                    currentVerseNumber: verseNum,
+                    currentVerse: foundVerse
+                })
+
+                return foundVerse
+            }
+
             const response = await fetch(`https://bible-api.com/${ref}?translation=${activeVersion.toLowerCase()}`);
             const data = await response.json();
 
             const foundVerse = data.verses.find((v: Verse) => v.verse == verseNum)
 
-            set({ 
-                currentBook: book , 
-                currentChapter: chapter , 
+            set({
+                currentBook: book,
+                currentChapter: chapter,
                 currentVerseNumber: verseNum,
                 currentVerse: foundVerse
             })
 
-            BibleCache.set(`${book}:${chapter}:${activeVersion}` , data.verses)
+            console.log(foundVerse)
 
-            return { success: true, reference: data.reference, text: data.text, translation: activeVersion };
+            BibleCache.set(`${book}:${chapter}:${activeVersion}`, data.verses)
+
+            return foundVerse
         } catch (error) {
             return { success: false, error: 'Failed to fetch passage' };
         }
     },
 
     async navigateToVerse(direction: 'next' | 'previous' | 'jump', steps = 1, target_verse?: number) {
-        
-        const { getBiblePassage , currentVerseNumber , currentBook , currentChapter } = get()
-        
+
+        const { getBiblePassage, currentVerseNumber, currentBook, currentChapter } = get()
+
         let newVerse = currentVerseNumber;
 
         if (direction === 'next') newVerse = currentVerseNumber + steps;
@@ -86,19 +102,6 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
         return { success: true, version: version.toUpperCase() };
     }
 }))
-
-
-window.ipcRenderer.on("get-bible-passage" , (data) => {
-    console.log(data)
-})
-
-window.ipcRenderer.on("navigate-to-verse" , (data) => {
-    console.log(data)
-})
-
-window.ipcRenderer.on("set-bible-version" , (data) => {
-    console.log(data)
-})
 
 
 export default useBibleStore
