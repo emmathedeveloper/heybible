@@ -20,7 +20,13 @@ const config: ForgeConfig = {
     }
   ],
   makers: [
-    { name: '@electron-forge/maker-squirrel', config: {} },
+    {
+      name: '@electron-forge/maker-squirrel',
+      config: {
+        authors: 'Evberin Emmanuel',
+        description: "The Versatile Bible AI. Retrieve scriptures with speed",
+      },
+    },
     { name: '@electron-forge/maker-zip', config: ['darwin'] },
     { name: '@electron-forge/maker-deb', config: {} },
     { name: '@electron-forge/maker-rpm', config: {} },
