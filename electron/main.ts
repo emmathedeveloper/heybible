@@ -9,14 +9,15 @@ import electronSquirrelStartup from 'electron-squirrel-startup'
 // const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+if(app.isPackaged){
+  updateElectronApp()
+}
+
 // Electron Forge / Squirrel startup
 if (process.platform === 'win32' && electronSquirrelStartup) {
   app.quit()
 }
 
-if(app.isPackaged){
-  updateElectronApp()
-}
 
 declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string
 declare const MAIN_WINDOW_VITE_NAME: string
