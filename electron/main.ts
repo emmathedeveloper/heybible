@@ -1,23 +1,18 @@
 import { app, BrowserWindow } from 'electron'
-import { createRequire } from 'node:module'
+// import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { createMainWindow, listenToIPC, windows } from './window-management'
+import { updateElectronApp } from "update-electron-app"
+import electronSquirrelStartup from 'electron-squirrel-startup'
 
-const require = createRequire(import.meta.url)
+// const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Electron Forge / Squirrel startup
-if (process.platform === 'win32') {
-  try {
-    if (require('electron-squirrel-startup')) {
-      app.quit()
-    }
-  } catch {}
+if (process.platform === 'win32' && electronSquirrelStartup) {
+  app.quit()
 }
-
-// Auto updater
-const { updateElectronApp } = require('update-electron-app')
 
 if(app.isPackaged){
   updateElectronApp()

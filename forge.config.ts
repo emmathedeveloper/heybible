@@ -28,8 +28,15 @@ const config: ForgeConfig = {
       },
     },
     { name: '@electron-forge/maker-zip', config: ['darwin'] },
-    { name: '@electron-forge/maker-deb', config: {} },
+    {
+      name: '@reforged/maker-appimage',
+      platforms: ['linux'],
+      config: {
+        // Your configuration options here
+      },
+    },
     { name: '@electron-forge/maker-rpm', config: {} },
+    { name: '@electron-forge/maker-deb', config: {} },
   ],
   plugins: [
     new AutoUnpackNativesPlugin({}),

@@ -1,6 +1,1 @@
-"use strict";
-require("electron");
-require("node:module");
-require("node:url");
-require("node:path");
-require("./main-CiSz5Ns3.cjs");
+"use strict";require("electron");require("node:url");require("node:path");require("./main-BZcwqu7D.cjs");
