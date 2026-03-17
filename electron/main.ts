@@ -7,27 +7,28 @@ import { createMainWindow, listenToIPC, windows } from './window-management'
 const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// The built directory structure
-//
-// ├─┬─┬ dist
-// │ │ └── index.html
-// │ │
-// │ ├─┬ dist-electron
-// │ │ ├── main.js
-// │ │ └── preload.mjs
-// │
-process.env.APP_ROOT = path.join(__dirname, '..')
+// Electron Forge / Squirrel startup
+if (require('electron-squirrel-startup')) app.quit()
 
-// 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x
-export const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL']
-export const MAIN_DIST = path.join(process.env.APP_ROOT, 'dist-electron')
-export const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist')
+// Auto updater
+const { updateElectronApp } = require('update-electron-app')
 
-process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 'public') : RENDERER_DIST
+if(app.isPackaged){
+  updateElectronApp()
+}
 
-// Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
+declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string
+declare const MAIN_WINDOW_VITE_NAME: string
+
+// Forge Vite plugin exposes these env vars
+// export const MAIN_WINDOW_VITE_DEV_SERVER_URL = process.env['MAIN_WINDOW_VITE_DEV_SERVER_URL']
+// export const MAIN_WINDOW_VITE_NAME = process.env['MAIN_WINDOW_VITE_NAME'] || "main_window"
+
+// Keep VITE_PUBLIC working for icons etc.
+process.env.VITE_PUBLIC = MAIN_WINDOW_VITE_DEV_SERVER_URL
+  ? path.join(path.resolve(__dirname, '../..'), 'public')
+  : path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}`)
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
@@ -36,13 +37,10 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) {
     createMainWindow()
   }
 })
 
 listenToIPC()
-
 app.whenReady().then(createMainWindow)

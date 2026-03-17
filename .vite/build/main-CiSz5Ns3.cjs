@@ -1,8 +1,30 @@
+"use strict";
+var __create = Object.create;
 var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
 };
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 var __accessCheck = (obj, member, msg) => member.has(obj) || __typeError("Cannot " + msg);
 var __privateGet = (obj, member, getter) => (__accessCheck(obj, member, "read from private field"), getter ? getter.call(obj) : member.get(obj));
@@ -10,32 +32,49 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
 var _Gaxios_instances, urlMayUseProxy_fn, applyRequestInterceptors_fn, applyResponseInterceptors_fn, prepareRequest_fn, appendTimeoutToSignal_fn, _proxyAgent, _fetch, _Gaxios_static, getProxyAgent_fn, getFetch_fn, _cache, _LRUCache_instances, moveToEnd_fn, evict_fn, _crypto, _clientAuthentication, _tokenExchangeEndpoint, _DefaultAwsSecurityCredentialsSupplier_instances, getImdsV2SessionToken_fn, getAwsRoleName_fn, retrieveAwsSecurityCredentials_fn, regionFromEnv_get, securityCredentialsFromEnv_get, _DEFAULT_AWS_REGIONAL_CREDENTIAL_VERIFICATION_URL, _tokenRefreshEndpoint;
-import { BrowserWindow, ipcMain, app } from "electron";
-import { createRequire } from "node:module";
-import { fileURLToPath } from "node:url";
-import path$3 from "node:path";
-import require$$1$7 from "child_process";
-import require$$1$3, { createWriteStream } from "fs";
-import require$$1$1 from "https";
-import require$$1 from "stream";
-import require$$1$2 from "os";
-import require$$0$2 from "events";
-import require$$1$4 from "process";
-import require$$2$1 from "util";
-import * as require$$2 from "path";
-import require$$2__default from "path";
-import require$$1$5 from "crypto";
-import require$$1$6 from "querystring";
-import require$$0$3 from "buffer";
-import * as fs$4 from "fs/promises";
-import { writeFile } from "fs/promises";
-import { Readable as Readable$1 } from "node:stream";
-import { finished } from "node:stream/promises";
-import require$$1$8 from "http";
-import require$$0$5 from "net";
-import require$$4 from "tls";
-import require$$7 from "url";
-import require$$0$4 from "zlib";
+const electron = require("electron");
+const node_module = require("node:module");
+const node_url = require("node:url");
+const path$3 = require("node:path");
+const require$$1$7 = require("child_process");
+const require$$1$3 = require("fs");
+const require$$1$1 = require("https");
+const require$$1 = require("stream");
+const require$$1$2 = require("os");
+const require$$0$2 = require("events");
+const require$$1$4 = require("process");
+const require$$2 = require("util");
+const require$$2$1 = require("path");
+const require$$1$5 = require("crypto");
+const require$$1$6 = require("querystring");
+const require$$0$3 = require("buffer");
+const fs$4 = require("fs/promises");
+const Stream$4 = require("node:stream");
+const promises = require("node:stream/promises");
+const require$$1$8 = require("http");
+const require$$0$5 = require("net");
+const require$$4 = require("tls");
+const require$$7 = require("url");
+const require$$0$4 = require("zlib");
+var _documentCurrentScript = typeof document !== "undefined" ? document.currentScript : null;
+function _interopNamespaceDefault(e) {
+  const n = Object.create(null, { [Symbol.toStringTag]: { value: "Module" } });
+  if (e) {
+    for (const k in e) {
+      if (k !== "default") {
+        const d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: () => e[k]
+        });
+      }
+    }
+  }
+  n.default = e;
+  return Object.freeze(n);
+}
+const require$$2__namespace = /* @__PURE__ */ _interopNamespaceDefault(require$$2$1);
+const fs__namespace = /* @__PURE__ */ _interopNamespaceDefault(fs$4);
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -1266,7 +1305,7 @@ prepareRequest_fn = async function(options) {
   if (!preparedHeaders.has("accept") && opts.responseType === "json") {
     preparedHeaders.set("accept", "application/json");
   }
-  const proxy = opts.proxy || ((_d = process.env) == null ? void 0 : _d.HTTPS_PROXY) || ((_e = process.env) == null ? void 0 : _e.https_proxy) || ((_f = process.env) == null ? void 0 : _f.HTTP_PROXY) || ((_g = process.env) == null ? void 0 : _g.http_proxy);
+  const proxy = opts.proxy || ((_d = process == null ? void 0 : process.env) == null ? void 0 : _d.HTTPS_PROXY) || ((_e = process == null ? void 0 : process.env) == null ? void 0 : _e.https_proxy) || ((_f = process == null ? void 0 : process.env) == null ? void 0 : _f.HTTP_PROXY) || ((_g = process == null ? void 0 : process.env) == null ? void 0 : _g.http_proxy);
   if (opts.agent) ;
   else if (proxy && __privateMethod(this, _Gaxios_instances, urlMayUseProxy_fn).call(this, opts.url, opts.noProxy)) {
     const HttpsProxyAgent = await __privateMethod(_h = _a$1, _Gaxios_static, getProxyAgent_fn).call(_h);
@@ -1316,12 +1355,12 @@ _proxyAgent = new WeakMap();
 _fetch = new WeakMap();
 _Gaxios_static = new WeakSet();
 getProxyAgent_fn = async function() {
-  __privateGet(this, _proxyAgent) || __privateSet(this, _proxyAgent, (await import("./index-C8kDFRp4.js").then((n) => n.i)).HttpsProxyAgent);
+  __privateGet(this, _proxyAgent) || __privateSet(this, _proxyAgent, (await Promise.resolve().then(() => require("./index-nBDf-C6C.cjs")).then((n) => n.index)).HttpsProxyAgent);
   return __privateGet(this, _proxyAgent);
 };
 getFetch_fn = async function() {
   const hasWindow = typeof window !== "undefined" && !!window;
-  __privateGet(this, _fetch) || __privateSet(this, _fetch, hasWindow ? window.fetch : (await import("./index-D-dGewCN.js")).default);
+  __privateGet(this, _fetch) || __privateSet(this, _fetch, hasWindow ? window.fetch : (await Promise.resolve().then(() => require("./index-Bjac2ImD.cjs"))).default);
   return __privateGet(this, _fetch);
 };
 __privateAdd(Gaxios, _Gaxios_static);
@@ -1379,7 +1418,7 @@ var src$1 = {};
 var jsonBigint = { exports: {} };
 var stringify = { exports: {} };
 var bignumber = { exports: {} };
-(function(module) {
+(function(module2) {
   (function(globalObject) {
     var BigNumber2, isNumeric = /^-?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/i, mathceil = Math.ceil, mathfloor = Math.floor, bignumberError = "[BigNumber Error] ", tooManyDigits = bignumberError + "Number primitive has more than 15 significant digits: ", BASE = 1e14, LOG_BASE = 14, MAX_SAFE_INTEGER = 9007199254740991, POWS_TEN = [1, 10, 100, 1e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9, 1e10, 1e11, 1e12, 1e13], SQRT_BASE = 1e7, MAX = 1e9;
     function clone(configObject) {
@@ -2711,8 +2750,8 @@ var bignumber = { exports: {} };
     }
     BigNumber2 = clone();
     BigNumber2["default"] = BigNumber2.BigNumber = BigNumber2;
-    if (module.exports) {
-      module.exports = BigNumber2;
+    if (module2.exports) {
+      module2.exports = BigNumber2;
     } else {
       if (!globalObject) {
         globalObject = typeof self != "undefined" && self ? self : window;
@@ -2722,9 +2761,9 @@ var bignumber = { exports: {} };
   })(commonjsGlobal);
 })(bignumber);
 var bignumberExports = bignumber.exports;
-(function(module) {
+(function(module2) {
   var BigNumber2 = bignumberExports;
-  var JSON2 = module.exports;
+  var JSON2 = module2.exports;
   (function() {
     var escapable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, gap, indent, meta = {
       // table of character substitutions
@@ -3265,7 +3304,7 @@ Colours.refresh();
   exports$12.log = log;
   const events_1 = require$$0$2;
   const process2 = __importStar(require$$1$4);
-  const util2 = __importStar(require$$2$1);
+  const util2 = __importStar(require$$2);
   const colours_1 = colours;
   var LogSeverity;
   (function(LogSeverity2) {
@@ -3426,8 +3465,8 @@ Colours.refresh();
       var _a2;
       const debugLogger = (_a2 = this.upstream) === null || _a2 === void 0 ? void 0 : _a2.makeLogger(namespace);
       return (fields, ...args) => {
-        var _a22;
-        const severity = (_a22 = fields.severity) !== null && _a22 !== void 0 ? _a22 : LogSeverity.INFO;
+        var _a3;
+        const severity = (_a3 = fields.severity) !== null && _a3 !== void 0 ? _a3 : LogSeverity.INFO;
         const json = Object.assign({
           severity,
           message: util2.format(...args)
@@ -3560,8 +3599,8 @@ Colours.refresh();
       return result;
     };
   }();
-  var __exportStar = commonjsGlobal && commonjsGlobal.__exportStar || function(m, exports2) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p)) __createBinding(exports2, m, p);
+  var __exportStar = commonjsGlobal && commonjsGlobal.__exportStar || function(m, exports$13) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports$13, p)) __createBinding(exports$13, m, p);
   };
   Object.defineProperty(exports$12, "__esModule", { value: true });
   exports$12.gcpResidencyCache = exports$12.METADATA_SERVER_DETECTION = exports$12.HEADERS = exports$12.HEADER_VALUE = exports$12.HEADER_NAME = exports$12.SECONDARY_HOST_ADDRESS = exports$12.HOST_ADDRESS = exports$12.BASE_PATH = void 0;
@@ -4066,7 +4105,7 @@ var computeclient = {};
 var oauth2client = {};
 var safeBuffer = { exports: {} };
 /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
-(function(module, exports$12) {
+(function(module2, exports$12) {
   var buffer = require$$0$3;
   var Buffer2 = buffer.Buffer;
   function copyProps(src2, dst) {
@@ -4075,7 +4114,7 @@ var safeBuffer = { exports: {} };
     }
   }
   if (Buffer2.from && Buffer2.alloc && Buffer2.allocUnsafe && Buffer2.allocUnsafeSlow) {
-    module.exports = buffer;
+    module2.exports = buffer;
   } else {
     copyProps(buffer, exports$12);
     exports$12.Buffer = SafeBuffer;
@@ -4275,7 +4314,7 @@ util$4.isValidFile = isValidFile;
 util$4.getWellKnownCertificateConfigFileLocation = getWellKnownCertificateConfigFileLocation;
 const fs$3 = require$$1$3;
 const os = require$$1$2;
-const path$2 = require$$2__default;
+const path$2 = require$$2$1;
 const WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
 const CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
 function snakeToCamel(str) {
@@ -5653,7 +5692,7 @@ var jwsSign$1 = {};
 var jws$1 = {};
 var Buffer$5 = safeBufferExports.Buffer;
 var Stream$3 = require$$1;
-var util$3 = require$$2$1;
+var util$3 = require$$2;
 function DataStream$2(data) {
   this.buffer = null;
   this.writable = true;
@@ -5730,7 +5769,7 @@ function requireBufferEqualConstantTime() {
 var Buffer$4 = safeBufferExports.Buffer;
 var crypto$1 = require$$1$5;
 var formatEcdsa = ecdsaSigFormatter;
-var util$2 = require$$2$1;
+var util$2 = require$$2;
 var MSG_INVALID_ALGORITHM = '"%s" is not a valid algorithm.\n  Supported algorithms are:\n  "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512" and "none".';
 var MSG_INVALID_SECRET = "secret must be a string or buffer";
 var MSG_INVALID_VERIFIER_KEY = "key must be a string or a buffer";
@@ -5958,7 +5997,7 @@ var DataStream$1 = dataStream;
 var jwa$1 = jwa$2;
 var Stream$2 = require$$1;
 var toString$1 = tostring;
-var util$1 = require$$2$1;
+var util$1 = require$$2;
 function base64url(string, encoding) {
   return Buffer$2.from(string, encoding).toString("base64").replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
 }
@@ -6027,7 +6066,7 @@ var DataStream = dataStream;
 var jwa2 = jwa$2;
 var Stream$1 = require$$1;
 var toString2 = tostring;
-var util = require$$2$1;
+var util = require$$2;
 var JWS_REGEX = /^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$/;
 function isObject(thing) {
   return Object.prototype.toString.call(thing) === "[object Object]";
@@ -6237,9 +6276,9 @@ class ErrorWithCode extends Error {
 errorWithCode.ErrorWithCode = ErrorWithCode;
 Object.defineProperty(getCredentials$1, "__esModule", { value: true });
 getCredentials$1.getCredentials = getCredentials;
-const path$1 = require$$2__default;
+const path$1 = require$$2$1;
 const fs$2 = require$$1$3;
-const util_1$6 = require$$2$1;
+const util_1$6 = require$$2;
 const errorWithCode_1 = errorWithCode;
 const readFile$1 = fs$2.readFile ? (0, util_1$6.promisify)(fs$2.readFile) : async () => {
   throw new errorWithCode_1.ErrorWithCode("use key rather than keyFile.", "MISSING_CREDENTIALS");
@@ -7871,7 +7910,7 @@ var identitypoolclient = {};
 var filesubjecttokensupplier = {};
 Object.defineProperty(filesubjecttokensupplier, "__esModule", { value: true });
 filesubjecttokensupplier.FileSubjectTokenSupplier = void 0;
-const util_1$2 = require$$2$1;
+const util_1$2 = require$$2;
 const fs$1 = require$$1$3;
 const readFile = (0, util_1$2.promisify)(fs$1.readFile ?? (() => {
 }));
@@ -9252,7 +9291,7 @@ externalAccountAuthorizedUserClient.ExternalAccountAuthorizedUserClient = Extern
   const gaxios_12 = src$2;
   const gcpMetadata2 = src$1;
   const os2 = require$$1$2;
-  const path2 = require$$2__default;
+  const path2 = require$$2$1;
   const crypto_12 = crypto$5;
   const computeclient_1 = computeclient;
   const idtokenclient_1 = idtokenclient;
@@ -10437,7 +10476,7 @@ function requireNodeGypBuild$1() {
   if (hasRequiredNodeGypBuild$1) return nodeGypBuild;
   hasRequiredNodeGypBuild$1 = 1;
   var fs2 = require$$1$3;
-  var path2 = require$$2__default;
+  var path2 = require$$2$1;
   var os2 = require$$1$2;
   var runtimeRequire = typeof __webpack_require__ === "function" ? __non_webpack_require__ : commonjsRequire;
   var vars = process.config && process.config.variables || {};
@@ -29584,13 +29623,13 @@ class NodeDownloader {
     if (params.downloadPath) {
       const response = await downloadFile(params, apiClient);
       if (response instanceof HttpResponse) {
-        const writer = createWriteStream(params.downloadPath);
-        const body = Readable$1.fromWeb(response.responseInternal.body);
+        const writer = require$$1$3.createWriteStream(params.downloadPath);
+        const body = Stream$4.Readable.fromWeb(response.responseInternal.body);
         body.pipe(writer);
-        await finished(writer);
+        await promises.finished(writer);
       } else {
         try {
-          await writeFile(params.downloadPath, response, {
+          await fs$4.writeFile(params.downloadPath, response, {
             encoding: "base64"
           });
         } catch (error) {
@@ -30917,7 +30956,7 @@ class NodeUploader {
   async stat(file) {
     const fileStat = { size: 0, type: void 0 };
     if (typeof file === "string") {
-      const originalStat = await fs$4.stat(file);
+      const originalStat = await fs__namespace.stat(file);
       fileStat.size = originalStat.size;
       fileStat.type = this.inferMimeType(file);
       return fileStat;
@@ -31053,9 +31092,9 @@ class NodeUploader {
     let response = new HttpResponse(new Response());
     let uploadCommand = "upload";
     let fileHandle;
-    const fileName = require$$2.basename(file);
+    const fileName = require$$2__namespace.basename(file);
     try {
-      fileHandle = await fs$4.open(file, "r");
+      fileHandle = await fs__namespace.open(file, "r");
       if (!fileHandle) {
         throw new Error(`Failed to open file`);
       }
@@ -31419,7 +31458,6 @@ Parameters:
                 (_a2 = windows2.main) == null ? void 0 : _a2.webContents.send("get-bible-passage", { book, chapter, verse });
               } else if (call.name === "navigate_to_verse") {
                 const { direction, steps, target_verse } = call.args;
-                result = { direction, steps, target_verse };
                 (_b = windows2.main) == null ? void 0 : _b.webContents.send("navigate-to-verse", { direction, steps, target_verse });
               } else if (call.name === "set_bible_version") {
                 const { version: version2 } = call.args;
@@ -31441,9 +31479,11 @@ Parameters:
         if (message.serverContent && message.serverContent.modelTurn && message.serverContent.modelTurn.parts && message.serverContent.modelTurn.parts.length > 0) ;
       },
       onerror: (e) => {
+        endAISession();
         console.log("Live Session Error:", JSON.stringify(e));
       },
       onclose: (e) => {
+        endAISession();
         console.log("Live Session Closed — code:", e.code, "| reason:", e.reason, "| wasClean:", e.wasClean);
       }
     }
@@ -31460,78 +31500,70 @@ function endAISession() {
 function createBlob(audioData) {
   return { data: audioData, mimeType: "audio/pcm;rate=16000" };
 }
-const __dirname$2 = path$3.dirname(fileURLToPath(import.meta.url));
+const __dirname$2 = path$3.dirname(node_url.fileURLToPath(typeof document === "undefined" ? require("url").pathToFileURL(__filename).href : _documentCurrentScript && _documentCurrentScript.tagName.toUpperCase() === "SCRIPT" && _documentCurrentScript.src || new URL("main-CiSz5Ns3.cjs", document.baseURI).href));
 const windows = {
   main: null,
   projector: null
 };
 function createMainWindow() {
-  windows.main = new BrowserWindow({
+  windows.main = new electron.BrowserWindow({
     title: "HeyBible - Control Panel",
     icon: path$3.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
-      preload: path$3.join(__dirname$2, "preload.mjs")
+      preload: path$3.join(__dirname$2, "preload.js")
     }
   });
-  if (VITE_DEV_SERVER_URL) {
-    windows.main.loadURL(VITE_DEV_SERVER_URL + "?view=control-panel");
-  } else {
-    windows.main.loadFile(path$3.join(RENDERER_DIST, `index.html`), { query: { view: "control-panel" } });
+  {
+    windows.main.loadURL(`${"http://localhost:5173"}?view=control-panel`);
   }
 }
-function createProjectorWindow() {
-  windows.projector = new BrowserWindow({
+async function createProjectorWindow() {
+  windows.projector = new electron.BrowserWindow({
     title: "HeyBible - Projector",
     icon: path$3.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
-      preload: path$3.join(__dirname$2, "preload.mjs")
+      preload: path$3.join(__dirname$2, "preload.js")
     }
   });
-  if (VITE_DEV_SERVER_URL) {
-    windows.projector.loadURL(VITE_DEV_SERVER_URL + "?view=projector");
-  } else {
-    windows.projector.loadFile(path$3.join(RENDERER_DIST, "index.html"), { query: { view: "projector" } });
+  {
+    await windows.projector.loadURL(`${"http://localhost:5173"}?view=projector`);
   }
 }
 const listenToIPC = () => {
-  ipcMain.on("start-ai-session", (_) => {
+  electron.ipcMain.handle("start-ai-session", async (_) => {
     createProjectorWindow();
-    startAISession(windows);
+    await startAISession(windows);
   });
-  ipcMain.on("end-ai-session", (_) => {
+  electron.ipcMain.handle("end-ai-session", (_) => {
     endAISession();
   });
-  ipcMain.on("audio-chunk", (_, { audioData }) => {
+  electron.ipcMain.on("audio-chunk", (_, { audioData }) => {
     if (AISession) AISession.sendRealtimeInput({ media: createBlob(audioData) });
   });
-  ipcMain.on("message:projector", (_, { type, verse }) => {
+  electron.ipcMain.on("message:projector", (_, { type, verse }) => {
     var _a2;
     (_a2 = windows.projector) == null ? void 0 : _a2.webContents.send(type, { verse });
   });
 };
-createRequire(import.meta.url);
-const __dirname$1 = path$3.dirname(fileURLToPath(import.meta.url));
-process.env.APP_ROOT = path$3.join(__dirname$1, "..");
-const VITE_DEV_SERVER_URL = process.env["VITE_DEV_SERVER_URL"];
-const MAIN_DIST = path$3.join(process.env.APP_ROOT, "dist-electron");
-const RENDERER_DIST = path$3.join(process.env.APP_ROOT, "dist");
-process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path$3.join(process.env.APP_ROOT, "public") : RENDERER_DIST;
-app.on("window-all-closed", () => {
+const require$1 = node_module.createRequire(typeof document === "undefined" ? require("url").pathToFileURL(__filename).href : _documentCurrentScript && _documentCurrentScript.tagName.toUpperCase() === "SCRIPT" && _documentCurrentScript.src || new URL("main-CiSz5Ns3.cjs", document.baseURI).href);
+const __dirname$1 = path$3.dirname(node_url.fileURLToPath(typeof document === "undefined" ? require("url").pathToFileURL(__filename).href : _documentCurrentScript && _documentCurrentScript.tagName.toUpperCase() === "SCRIPT" && _documentCurrentScript.src || new URL("main-CiSz5Ns3.cjs", document.baseURI).href));
+if (require$1("electron-squirrel-startup")) electron.app.quit();
+const { updateElectronApp } = require$1("update-electron-app");
+if (electron.app.isPackaged) {
+  updateElectronApp();
+}
+process.env.VITE_PUBLIC = path$3.join(path$3.resolve(__dirname$1, "../.."), "public");
+electron.app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
-    app.quit();
+    electron.app.quit();
     windows.main = null;
   }
 });
-app.on("activate", () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
+electron.app.on("activate", () => {
+  if (electron.BrowserWindow.getAllWindows().length === 0) {
     createMainWindow();
   }
 });
 listenToIPC();
-app.whenReady().then(createMainWindow);
-export {
-  MAIN_DIST as M,
-  RENDERER_DIST as R,
-  VITE_DEV_SERVER_URL as V,
-  commonjsGlobal as c
-};
+electron.app.whenReady().then(createMainWindow);
+exports.commonjsGlobal = commonjsGlobal;

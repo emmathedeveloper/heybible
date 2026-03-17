@@ -17,7 +17,7 @@ type BibleStoreType = {
     currentVerse: Verse | null
 
     getBiblePassage: (book: string, chapter: number, verse?: number) => Promise<Verse>,
-    navigateToVerse: (direction: 'next' | 'previous' | 'jump', steps: number, target_verse?: number) => void,
+    navigateToVerse: (direction: 'next' | 'previous' | 'jump', steps: number, target_verse?: number) => Promise<Verse>,
     setBibleVersion: (version: string) => void
 }
 

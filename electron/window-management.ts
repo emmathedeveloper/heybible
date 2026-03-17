@@ -1,74 +1,77 @@
 import { BrowserWindow, ipcMain } from 'electron'
 import path from 'node:path'
-import { RENDERER_DIST, VITE_DEV_SERVER_URL } from './main'
+// import { MAIN_WINDOW_VITE_DEV_SERVER_URL, MAIN_WINDOW_VITE_NAME } from './main'
 import { fileURLToPath } from 'node:url'
 import { AISession, createBlob, endAISession, startAISession } from './ai'
+
+declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string
+declare const MAIN_WINDOW_VITE_NAME: string
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export type AppWindows = {
-  main: BrowserWindow | null,
-  projector: BrowserWindow | null,
+  main: BrowserWindow | null
+  projector: BrowserWindow | null
 }
 
 export const windows: AppWindows = {
   main: null,
-  projector: null
+  projector: null,
 }
 
 export function createMainWindow() {
   windows.main = new BrowserWindow({
-    title: "HeyBible - Control Panel",
+    title: 'HeyBible - Control Panel',
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
-      preload: path.join(__dirname, 'preload.mjs'),
+      preload: path.join(__dirname, 'preload.js'),
     },
   })
 
-  if (VITE_DEV_SERVER_URL) {
-    windows.main.loadURL(VITE_DEV_SERVER_URL + '?view=control-panel')
+  if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
+    windows.main.loadURL(`${MAIN_WINDOW_VITE_DEV_SERVER_URL}?view=control-panel`)
   } else {
-    // windows.main.loadFile('dist/index.html')
-    windows.main.loadFile(path.join(RENDERER_DIST, `index.html`) , { query: { view: 'control-panel' } })
+    windows.main.loadFile(
+      path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
+      { query: { view: 'control-panel' } }
+    )
   }
 }
 
-export function createProjectorWindow() {
-
+export async function createProjectorWindow() {
   windows.projector = new BrowserWindow({
-    title: "HeyBible - Projector",
+    title: 'HeyBible - Projector',
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
-      preload: path.join(__dirname, 'preload.mjs'),
+      preload: path.join(__dirname, 'preload.js'),
     },
   })
 
-  if (VITE_DEV_SERVER_URL) {
-    windows.projector.loadURL(VITE_DEV_SERVER_URL + '?view=projector')
+  if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
+    await windows.projector.loadURL(`${MAIN_WINDOW_VITE_DEV_SERVER_URL}?view=projector`)
   } else {
-    // windows.projector.loadFile('dist/index.html')
-    windows.projector.loadFile(path.join(RENDERER_DIST, 'index.html') , { query: { view: 'projector' } })
+    await windows.projector.loadFile(
+      path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
+      { query: { view: 'projector' } }
+    )
   }
 }
-
 
 export const listenToIPC = () => {
-
-  ipcMain.on('start-ai-session', (_) => {
+  ipcMain.handle('start-ai-session', async (_) => {
     createProjectorWindow()
-
-    startAISession(windows)
+    await startAISession(windows)
   })
 
-  ipcMain.on('end-ai-session', (_) => {
+  ipcMain.handle('end-ai-session' , (_) => {
     endAISession()
   })
 
-  ipcMain.on('audio-chunk' , (_ , { audioData }) => {
-    if(AISession) AISession.sendRealtimeInput({ media: createBlob(audioData) })
+  ipcMain.on('audio-chunk', (_, { audioData }) => {
+    if (AISession) AISession.sendRealtimeInput({ media: createBlob(audioData) })
   })
 
-  ipcMain.on("message:projector" , (_ , { type , verse }) => {
-    windows.projector?.webContents.send(type , { verse })
+  ipcMain.on('message:projector', (_, { type, verse }) => {
+    windows.projector?.webContents.send(type, { verse })
   })
 }

@@ -10,7 +10,7 @@ const ControlPanelView = () => {
     const handleClick = async () => {
 
         if (!isRecording) {
-            await window.ipcRenderer.send('start-ai-session')
+            await window.ipcRenderer.invoke('start-ai-session')
 
             setOnAudioChunk((audioData) => {
                 window.ipcRenderer.send('audio-chunk', { audioData })
@@ -18,7 +18,7 @@ const ControlPanelView = () => {
 
             await start();
         } else {
-            window.ipcRenderer.send('end-ai-session')
+            window.ipcRenderer.invoke('end-ai-session')
 
             stop();
 
@@ -37,7 +37,9 @@ const ControlPanelView = () => {
 
         window.ipcRenderer.on("navigate-to-verse", (_, data) => {
             console.log(data)
-            useBibleStore.getState().navigateToVerse(data.direction, data.steps, data.target_verse)
+            useBibleStore.getState().navigateToVerse(data.direction, data.steps, data.target_verse).then(verse => {
+                window.ipcRenderer.send("message:projector", { type: "DISPLAY_VERSE", verse })
+            })
         })
 
         window.ipcRenderer.on("set-bible-version", (_, data) => {

@@ -1,4 +1,6 @@
-import { FormData, File } from "./index-D-dGewCN.js";
+"use strict";
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const index = require("./index-Bjac2ImD.cjs");
 let s = 0;
 const S = {
   START_BOUNDARY: s++,
@@ -59,7 +61,7 @@ class MultipartParser {
     let i = 0;
     const length_ = data.length;
     let previousIndex = this.index;
-    let { lookbehind, boundary, boundaryChars, index, state, flags } = this;
+    let { lookbehind, boundary, boundaryChars, index: index2, state, flags } = this;
     const boundaryLength = this.boundary.length;
     const boundaryEnd = boundaryLength - 1;
     const bufferLength = data.length;
@@ -93,20 +95,20 @@ class MultipartParser {
       c = data[i];
       switch (state) {
         case S.START_BOUNDARY:
-          if (index === boundary.length - 2) {
+          if (index2 === boundary.length - 2) {
             if (c === HYPHEN) {
               flags |= F.LAST_BOUNDARY;
             } else if (c !== CR) {
               return;
             }
-            index++;
+            index2++;
             break;
-          } else if (index - 1 === boundary.length - 2) {
+          } else if (index2 - 1 === boundary.length - 2) {
             if (flags & F.LAST_BOUNDARY && c === HYPHEN) {
               state = S.END;
               flags = 0;
             } else if (!(flags & F.LAST_BOUNDARY) && c === LF) {
-              index = 0;
+              index2 = 0;
               callback("onPartBegin");
               state = S.HEADER_FIELD_START;
             } else {
@@ -114,29 +116,29 @@ class MultipartParser {
             }
             break;
           }
-          if (c !== boundary[index + 2]) {
-            index = -2;
+          if (c !== boundary[index2 + 2]) {
+            index2 = -2;
           }
-          if (c === boundary[index + 2]) {
-            index++;
+          if (c === boundary[index2 + 2]) {
+            index2++;
           }
           break;
         case S.HEADER_FIELD_START:
           state = S.HEADER_FIELD;
           mark("onHeaderField");
-          index = 0;
+          index2 = 0;
         case S.HEADER_FIELD:
           if (c === CR) {
             clear("onHeaderField");
             state = S.HEADERS_ALMOST_DONE;
             break;
           }
-          index++;
+          index2++;
           if (c === HYPHEN) {
             break;
           }
           if (c === COLON) {
-            if (index === 1) {
+            if (index2 === 1) {
               return;
             }
             dataCallback("onHeaderField", true);
@@ -178,8 +180,8 @@ class MultipartParser {
           state = S.PART_DATA;
           mark("onPartData");
         case S.PART_DATA:
-          previousIndex = index;
-          if (index === 0) {
+          previousIndex = index2;
+          if (index2 === 0) {
             i += boundaryEnd;
             while (i < bufferLength && !(data[i] in boundaryChars)) {
               i += boundaryLength;
@@ -187,27 +189,27 @@ class MultipartParser {
             i -= boundaryEnd;
             c = data[i];
           }
-          if (index < boundary.length) {
-            if (boundary[index] === c) {
-              if (index === 0) {
+          if (index2 < boundary.length) {
+            if (boundary[index2] === c) {
+              if (index2 === 0) {
                 dataCallback("onPartData", true);
               }
-              index++;
+              index2++;
             } else {
-              index = 0;
+              index2 = 0;
             }
-          } else if (index === boundary.length) {
-            index++;
+          } else if (index2 === boundary.length) {
+            index2++;
             if (c === CR) {
               flags |= F.PART_BOUNDARY;
             } else if (c === HYPHEN) {
               flags |= F.LAST_BOUNDARY;
             } else {
-              index = 0;
+              index2 = 0;
             }
-          } else if (index - 1 === boundary.length) {
+          } else if (index2 - 1 === boundary.length) {
             if (flags & F.PART_BOUNDARY) {
-              index = 0;
+              index2 = 0;
               if (c === LF) {
                 flags &= ~F.PART_BOUNDARY;
                 callback("onPartEnd");
@@ -221,14 +223,14 @@ class MultipartParser {
                 state = S.END;
                 flags = 0;
               } else {
-                index = 0;
+                index2 = 0;
               }
             } else {
-              index = 0;
+              index2 = 0;
             }
           }
-          if (index > 0) {
-            lookbehind[index - 1] = c;
+          if (index2 > 0) {
+            lookbehind[index2 - 1] = c;
           } else if (previousIndex > 0) {
             const _lookbehind = new Uint8Array(lookbehind.buffer, lookbehind.byteOffset, lookbehind.byteLength);
             callback("onPartData", 0, previousIndex, _lookbehind);
@@ -246,7 +248,7 @@ class MultipartParser {
     dataCallback("onHeaderField");
     dataCallback("onHeaderValue");
     dataCallback("onPartData");
-    this.index = index;
+    this.index = index2;
     this.state = state;
     this.flags = flags;
   }
@@ -287,7 +289,7 @@ async function toFormData(Body, ct) {
   let contentType;
   let filename;
   const entryChunks = [];
-  const formData = new FormData();
+  const formData = new index.FormData();
   const onPartData = (ui8a) => {
     entryValue += decoder.decode(ui8a, { stream: true });
   };
@@ -295,7 +297,7 @@ async function toFormData(Body, ct) {
     entryChunks.push(ui8a);
   };
   const appendFileToFormData = () => {
-    const file = new File(entryChunks, filename, { type: contentType });
+    const file = new index.File(entryChunks, filename, { type: contentType });
     formData.append(entryName, file);
   };
   const appendEntryToFormData = () => {
@@ -345,6 +347,4 @@ async function toFormData(Body, ct) {
   parser.end();
   return formData;
 }
-export {
-  toFormData
-};
+exports.toFormData = toFormData;

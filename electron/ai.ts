@@ -170,7 +170,7 @@ Parameters:
                                     target_verse?: number;
                                 };
 
-                                result = { direction, steps, target_verse }
+                                // result = { direction, steps, target_verse }
                                 
                                 windows.main?.webContents.send("navigate-to-verse" , { direction , steps , target_verse })
                             } else if (call.name === 'set_bible_version') {
@@ -224,9 +224,11 @@ Parameters:
                 }
             },
             onerror: (e: ErrorEvent) => {
+                endAISession()
                 console.log('Live Session Error:', JSON.stringify(e));
             },
             onclose: (e: CloseEvent) => {
+                endAISession()
                 console.log('Live Session Closed — code:', e.code, '| reason:', e.reason, '| wasClean:', e.wasClean);
             },
         },

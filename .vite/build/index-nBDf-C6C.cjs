@@ -1,13 +1,14 @@
-import { c as commonjsGlobal } from "./main-B-n6Q2su.js";
-import require$$0 from "net";
-import require$$4 from "tls";
-import require$$2$1 from "assert";
-import require$$1 from "tty";
-import require$$2 from "util";
-import require$$1$1 from "os";
-import require$$1$2 from "http";
-import require$$1$3 from "https";
-import require$$7 from "url";
+"use strict";
+const main = require("./main-CiSz5Ns3.cjs");
+const require$$0 = require("net");
+const require$$4 = require("tls");
+const require$$2$1 = require("assert");
+const require$$1 = require("tty");
+const require$$2 = require("util");
+const require$$1$1 = require("os");
+const require$$1$2 = require("http");
+const require$$1$3 = require("https");
+const require$$7 = require("url");
 function _mergeNamespaces(n, m) {
   for (var i = 0; i < m.length; i++) {
     const e = m[i];
@@ -329,7 +330,7 @@ var hasRequiredBrowser;
 function requireBrowser() {
   if (hasRequiredBrowser) return browser.exports;
   hasRequiredBrowser = 1;
-  (function(module, exports$1) {
+  (function(module2, exports$1) {
     exports$1.formatArgs = formatArgs;
     exports$1.save = save;
     exports$1.load = load;
@@ -437,7 +438,7 @@ function requireBrowser() {
       typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
     }
     function formatArgs(args) {
-      args[0] = (this.useColors ? "%c" : "") + this.namespace + (this.useColors ? " %c" : " ") + args[0] + (this.useColors ? "%c " : " ") + "+" + module.exports.humanize(this.diff);
+      args[0] = (this.useColors ? "%c" : "") + this.namespace + (this.useColors ? " %c" : " ") + args[0] + (this.useColors ? "%c " : " ") + "+" + module2.exports.humanize(this.diff);
       if (!this.useColors) {
         return;
       }
@@ -485,8 +486,8 @@ function requireBrowser() {
       } catch (error) {
       }
     }
-    module.exports = requireCommon()(exports$1);
-    const { formatters } = module.exports;
+    module2.exports = requireCommon()(exports$1);
+    const { formatters } = module2.exports;
     formatters.j = function(v) {
       try {
         return JSON.stringify(v);
@@ -617,7 +618,7 @@ var hasRequiredNode;
 function requireNode() {
   if (hasRequiredNode) return node.exports;
   hasRequiredNode = 1;
-  (function(module, exports$1) {
+  (function(module2, exports$1) {
     const tty = require$$1;
     const util = require$$2;
     exports$1.init = init;
@@ -745,7 +746,7 @@ function requireNode() {
         const colorCode = "\x1B[3" + (c < 8 ? c : "8;5;" + c);
         const prefix = `  ${colorCode};1m${name} \x1B[0m`;
         args[0] = prefix + args[0].split("\n").join("\n" + prefix);
-        args.push(colorCode + "m+" + module.exports.humanize(this.diff) + "\x1B[0m");
+        args.push(colorCode + "m+" + module2.exports.humanize(this.diff) + "\x1B[0m");
       } else {
         args[0] = getDate() + name + " " + args[0];
       }
@@ -776,8 +777,8 @@ function requireNode() {
         debug2.inspectOpts[keys[i]] = exports$1.inspectOpts[keys[i]];
       }
     }
-    module.exports = requireCommon()(exports$1);
-    const { formatters } = module.exports;
+    module2.exports = requireCommon()(exports$1);
+    const { formatters } = module2.exports;
     formatters.o = function(v) {
       this.inspectOpts.colors = this.useColors;
       return util.inspect(v, this.inspectOpts).split("\n").map((str) => str.trim()).join(" ");
@@ -797,7 +798,7 @@ if (typeof process === "undefined" || process.type === "renderer" || process.bro
 var srcExports = src.exports;
 var dist = {};
 var helpers = {};
-var __createBinding$1 = commonjsGlobal && commonjsGlobal.__createBinding || (Object.create ? function(o, m, k, k2) {
+var __createBinding$1 = main.commonjsGlobal && main.commonjsGlobal.__createBinding || (Object.create ? function(o, m, k, k2) {
   if (k2 === void 0) k2 = k;
   var desc = Object.getOwnPropertyDescriptor(m, k);
   if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -810,12 +811,12 @@ var __createBinding$1 = commonjsGlobal && commonjsGlobal.__createBinding || (Obj
   if (k2 === void 0) k2 = k;
   o[k2] = m[k];
 });
-var __setModuleDefault$1 = commonjsGlobal && commonjsGlobal.__setModuleDefault || (Object.create ? function(o, v) {
+var __setModuleDefault$1 = main.commonjsGlobal && main.commonjsGlobal.__setModuleDefault || (Object.create ? function(o, v) {
   Object.defineProperty(o, "default", { enumerable: true, value: v });
 } : function(o, v) {
   o["default"] = v;
 });
-var __importStar$1 = commonjsGlobal && commonjsGlobal.__importStar || function(mod) {
+var __importStar$1 = main.commonjsGlobal && main.commonjsGlobal.__importStar || function(mod) {
   if (mod && mod.__esModule) return mod;
   var result = {};
   if (mod != null) {
@@ -861,7 +862,7 @@ function req(url, opts = {}) {
 }
 helpers.req = req;
 (function(exports$1) {
-  var __createBinding2 = commonjsGlobal && commonjsGlobal.__createBinding || (Object.create ? function(o, m, k, k2) {
+  var __createBinding2 = main.commonjsGlobal && main.commonjsGlobal.__createBinding || (Object.create ? function(o, m, k, k2) {
     if (k2 === void 0) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
     if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -874,12 +875,12 @@ helpers.req = req;
     if (k2 === void 0) k2 = k;
     o[k2] = m[k];
   });
-  var __setModuleDefault2 = commonjsGlobal && commonjsGlobal.__setModuleDefault || (Object.create ? function(o, v) {
+  var __setModuleDefault2 = main.commonjsGlobal && main.commonjsGlobal.__setModuleDefault || (Object.create ? function(o, v) {
     Object.defineProperty(o, "default", { enumerable: true, value: v });
   } : function(o, v) {
     o["default"] = v;
   });
-  var __importStar2 = commonjsGlobal && commonjsGlobal.__importStar || function(mod) {
+  var __importStar2 = main.commonjsGlobal && main.commonjsGlobal.__importStar || function(mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
     if (mod != null) {
@@ -888,7 +889,7 @@ helpers.req = req;
     __setModuleDefault2(result, mod);
     return result;
   };
-  var __exportStar = commonjsGlobal && commonjsGlobal.__exportStar || function(m, exports$12) {
+  var __exportStar = main.commonjsGlobal && main.commonjsGlobal.__exportStar || function(m, exports$12) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports$12, p)) __createBinding2(exports$12, m, p);
   };
   Object.defineProperty(exports$1, "__esModule", { value: true });
@@ -1012,7 +1013,7 @@ helpers.req = req;
   exports$1.Agent = Agent;
 })(dist);
 var parseProxyResponse$1 = {};
-var __importDefault$1 = commonjsGlobal && commonjsGlobal.__importDefault || function(mod) {
+var __importDefault$1 = main.commonjsGlobal && main.commonjsGlobal.__importDefault || function(mod) {
   return mod && mod.__esModule ? mod : { "default": mod };
 };
 Object.defineProperty(parseProxyResponse$1, "__esModule", { value: true });
@@ -1101,7 +1102,7 @@ function parseProxyResponse(socket) {
   });
 }
 parseProxyResponse$1.parseProxyResponse = parseProxyResponse;
-var __createBinding = commonjsGlobal && commonjsGlobal.__createBinding || (Object.create ? function(o, m, k, k2) {
+var __createBinding = main.commonjsGlobal && main.commonjsGlobal.__createBinding || (Object.create ? function(o, m, k, k2) {
   if (k2 === void 0) k2 = k;
   var desc = Object.getOwnPropertyDescriptor(m, k);
   if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -1114,12 +1115,12 @@ var __createBinding = commonjsGlobal && commonjsGlobal.__createBinding || (Objec
   if (k2 === void 0) k2 = k;
   o[k2] = m[k];
 });
-var __setModuleDefault = commonjsGlobal && commonjsGlobal.__setModuleDefault || (Object.create ? function(o, v) {
+var __setModuleDefault = main.commonjsGlobal && main.commonjsGlobal.__setModuleDefault || (Object.create ? function(o, v) {
   Object.defineProperty(o, "default", { enumerable: true, value: v });
 } : function(o, v) {
   o["default"] = v;
 });
-var __importStar = commonjsGlobal && commonjsGlobal.__importStar || function(mod) {
+var __importStar = main.commonjsGlobal && main.commonjsGlobal.__importStar || function(mod) {
   if (mod && mod.__esModule) return mod;
   var result = {};
   if (mod != null) {
@@ -1128,7 +1129,7 @@ var __importStar = commonjsGlobal && commonjsGlobal.__importStar || function(mod
   __setModuleDefault(result, mod);
   return result;
 };
-var __importDefault = commonjsGlobal && commonjsGlobal.__importDefault || function(mod) {
+var __importDefault = main.commonjsGlobal && main.commonjsGlobal.__importDefault || function(mod) {
   return mod && mod.__esModule ? mod : { "default": mod };
 };
 Object.defineProperty(dist$1, "__esModule", { value: true });
@@ -1251,6 +1252,4 @@ const index = /* @__PURE__ */ _mergeNamespaces({
   },
   default: dist$1
 }, [dist$1]);
-export {
-  index as i
-};
+exports.index = index;
