@@ -32,7 +32,7 @@ export function createMainWindow() {
     windows.main.loadURL(`${MAIN_WINDOW_VITE_DEV_SERVER_URL}?view=control-panel`)
   } else {
     windows.main.loadFile(
-      path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
+      path.join(__dirname, '../renderer', MAIN_WINDOW_VITE_NAME, 'index.html'),
       { query: { view: 'control-panel' } }
     )
   }
@@ -51,7 +51,7 @@ export async function createProjectorWindow() {
     await windows.projector.loadURL(`${MAIN_WINDOW_VITE_DEV_SERVER_URL}?view=projector`)
   } else {
     await windows.projector.loadFile(
-      path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
+      path.join(__dirname, '../renderer', MAIN_WINDOW_VITE_NAME, 'index.html'),
       { query: { view: 'projector' } }
     )
   }

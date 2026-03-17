@@ -225,7 +225,7 @@ Parameters:
             },
             onerror: (e: ErrorEvent) => {
                 endAISession()
-                console.log('Live Session Error:', JSON.stringify(e));
+                console.log('Live Session Closed — code:', e.error);
             },
             onclose: (e: CloseEvent) => {
                 endAISession()
