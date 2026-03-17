@@ -8,7 +8,13 @@ const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Electron Forge / Squirrel startup
-if (require('electron-squirrel-startup')) app.quit()
+if (process.platform === 'win32') {
+  try {
+    if (require('electron-squirrel-startup')) {
+      app.quit()
+    }
+  } catch {}
+}
 
 // Auto updater
 const { updateElectronApp } = require('update-electron-app')
