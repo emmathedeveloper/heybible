@@ -14,7 +14,7 @@ if(app.isPackaged){
 }
 
 // Electron Forge / Squirrel startup
-if (process.platform === 'win32' && electronSquirrelStartup) {
+if (process.platform === 'win32' && electronSquirrelStartup && app.isPackaged) {
   app.quit()
 }
 
