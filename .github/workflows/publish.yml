@@ -1,0 +1,38 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+          - os: macos-latest
+          - os: windows-latest
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install RPM tooling (Linux only)
+        if: runner.os == 'Linux'
+        run: sudo apt-get install -y rpm
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bun run publish
