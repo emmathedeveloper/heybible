@@ -35,8 +35,8 @@ const config: ForgeConfig = {
         // Your configuration options here
       },
     },
-    // { name: '@electron-forge/maker-rpm', config: {} },
-    // { name: '@electron-forge/maker-deb', config: {} },
+    { name: '@electron-forge/maker-rpm', config: {} },
+    { name: '@electron-forge/maker-deb', config: {} },
   ],
   plugins: [
     new AutoUnpackNativesPlugin({}),
