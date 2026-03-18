@@ -33,5 +33,4 @@ jobs:
       - name: Build & Publish
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          DEBUG: electron-builder
         run: bun run release
