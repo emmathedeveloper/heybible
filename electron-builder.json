@@ -43,6 +43,7 @@
     "target": [
       "AppImage"
     ],
+    "category": "Utility",
     "artifactName": "${productName}-Linux-${version}.${ext}"
   }
 }
