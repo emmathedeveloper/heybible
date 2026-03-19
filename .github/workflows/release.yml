@@ -26,17 +26,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-
       - name: Install dependencies
-        run: bun install
-
-      - name: Rebuild native modules
-        run: npx electron-rebuild -f -w bufferutil,utf-8-validate
+        run: npm install
 
       - name: Build app
-        run: bun run build
+        run: npm run build
 
       - name: Build & Publish
-        run: bun run release
+        run: npm run release
