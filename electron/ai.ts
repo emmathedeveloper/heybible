@@ -236,12 +236,17 @@ Parameters:
 }
 
 export function endAISession(){
-    if(AISession){
-        AISession.close()
+
+    try {
+        console.log("Closing session")
 
         windows.projector?.close()
 
+        windows.projector = null
+
         AISession = undefined
+    } catch (error) {
+        console.log(error)
     }
 }
 

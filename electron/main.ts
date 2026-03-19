@@ -2,6 +2,8 @@ import { app, BrowserWindow } from 'electron'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { autoUpdater } from 'electron-updater'
+import { createMainWindow, createSplashWindow } from './window-management'
+import { initIPC } from './ipc'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -68,4 +70,6 @@ app.on("ready" , () => {
   autoUpdater.checkForUpdatesAndNotify()
 })
 
-app.whenReady().then(createWindow)
+initIPC()
+
+app.whenReady().then(createSplashWindow)
