@@ -42,11 +42,13 @@ export function createSplashWindow() {
     )
   }
 
-  setTimeout(() => {
-    windows.splash?.close()
+  windows.splash.webContents.on('did-finish-load', () => {
+    setTimeout(() => {
+      windows.splash?.close()
 
-    createMainWindow()
-  } , 5000)
+      createMainWindow()
+    }, 5000)
+  })
 }
 
 export function createAuthWindow() {
