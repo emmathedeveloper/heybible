@@ -46,25 +46,26 @@ export function createSplashWindow() {
     setTimeout(() => {
       windows.splash?.close()
 
-      createMainWindow()
+      createAuthWindow()
     }, 5000)
   })
 }
 
 export function createAuthWindow() {
-  windows.main = new BrowserWindow({
+  windows.auth = new BrowserWindow({
     title: 'Authenticate',
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
     },
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    width: 1200,
   })
 
   if (VITE_DEV_SERVER_URL) {
-    windows.main.loadURL(`${VITE_DEV_SERVER_URL}?view=auth`)
+    windows.auth.loadURL(`${VITE_DEV_SERVER_URL}?view=auth`)
   } else {
-    windows.main.loadFile(
+    windows.auth.loadFile(
       path.join(RENDERER_DIST, 'index.html'),
       { query: { view: 'auth' } }
     )
