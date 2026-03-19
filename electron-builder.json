@@ -16,6 +16,8 @@
     "repo": "heybible",
     "releaseType": "draft"
   },
+  "npmRebuild": true,
+  "buildDependenciesFromSource": false,
   "mac": {
     "target": [
       "dmg"
