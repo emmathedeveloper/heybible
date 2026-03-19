@@ -32,10 +32,11 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Rebuild native modules
+        run: npx electron-rebuild -f -w bufferutil,utf-8-validate
+
       - name: Build app
         run: bun run build
 
       - name: Build & Publish
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: bun run release
