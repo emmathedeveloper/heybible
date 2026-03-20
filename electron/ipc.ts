@@ -1,5 +1,4 @@
 import { BrowserWindow, ipcMain } from "electron"
-import { startAISession, endAISession, AISession, createBlob } from "./ai"
 import { createMainWindow, createProjectorWindow, windows } from "./window-management"
 import { LicenseManager } from "./license-manager"
 import { hostname, userInfo } from "node:os"
@@ -75,13 +74,12 @@ export const initIPC = () => {
     }
   })
 
-  ipcMain.handle('start-ai-session', async (_) => {
+  ipcMain.on('open-projector', (_) => {
     createProjectorWindow()
-    await startAISession(windows)
   })
 
-  ipcMain.handle('end-ai-session', (_) => {
-    endAISession()
+  ipcMain.on('close-projector', (_) => {
+    windows.projector?.close()
   })
 
   ipcMain.on('goto-app', (event) => {
@@ -90,10 +88,6 @@ export const initIPC = () => {
     win?.close()
 
     createMainWindow()
-  })
-
-  ipcMain.on('audio-chunk', (_, { audioData }) => {
-    if (AISession) AISession.sendRealtimeInput({ media: createBlob(audioData) })
   })
 
   ipcMain.on('message:projector', (_, { type, verse }) => {

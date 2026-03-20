@@ -1,24 +1,24 @@
 import { Button } from "@/components/ui/button"
-import useBibleStore from "@/lib/bible"
+import { useConnectionStore } from "@/lib/connection"
 import { useRecordingStore } from "@/lib/recording"
-import { useEffect } from "react"
 
 const ControlPanelView = () => {
 
     const { setOnAudioChunk, isRecording, start, stop } = useRecordingStore()
+    const { sendMessage , status , connect , disconnect } = useConnectionStore()
 
     const handleClick = async () => {
 
         if (!isRecording) {
-            await window.ipcRenderer.invoke('start-ai-session')
+            connect()
 
             setOnAudioChunk((audioData) => {
-                window.ipcRenderer.send('audio-chunk', { audioData })
+                sendMessage({ type: 'realtimeInput', audioData })
             })
 
             await start();
         } else {
-            window.ipcRenderer.invoke('end-ai-session')
+            disconnect()
 
             stop();
 
@@ -26,32 +26,10 @@ const ControlPanelView = () => {
         }
     }
 
-    useEffect(() => {
-        window.ipcRenderer.on("get-bible-passage", (_, data) => {
-            console.log(data)
-
-            useBibleStore.getState().getBiblePassage(data.book, data.chapter, data.verse).then(verse => {
-                window.ipcRenderer.send("message:projector", { type: "DISPLAY_VERSE", verse })
-            })
-        })
-
-        window.ipcRenderer.on("navigate-to-verse", (_, data) => {
-            console.log(data)
-            useBibleStore.getState().navigateToVerse(data.direction, data.steps, data.target_verse).then(verse => {
-                window.ipcRenderer.send("message:projector", { type: "DISPLAY_VERSE", verse })
-            })
-        })
-
-        window.ipcRenderer.on("set-bible-version", (_, data) => {
-            console.log(data)
-            useBibleStore.getState().setBibleVersion(data.version)
-        })
-    }, [])
-
     return (
         <div className="size-full flex items-center justify-center">
             <Button onClick={handleClick}>
-                {!isRecording ? "Start Session" : "End Session"}
+                {!isRecording && status == 'disconnected'  ? "Start Session" : "End Session"}
             </Button>
         </div>
     )
