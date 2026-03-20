@@ -72,10 +72,10 @@ export function LoginForm({
 
   const fetchLicenseInfo = async (license: string) => {
 
-      const API_URL = 'http://localhost:3001'
+      const API_URL = 'https://heybible-server.onrender.com/api'
 
       try {
-        const res = await fetch(`${API_URL}/api/verify/check` , {
+        const res = await fetch(`${API_URL}/verify/check` , {
           method: "POST",
           body: JSON.stringify({ license }),
           headers: {
