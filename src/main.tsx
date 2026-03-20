@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createHashHistory, createRouter } from '@tanstack/react-router'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import "./index.css"
 
 // Import the generated route tree
@@ -18,11 +19,17 @@ declare module '@tanstack/react-router' {
   }
 }
 
+const client = new QueryClient({
+  defaultOptions: {}
+})
+
 // Render the app
 const rootElement = document.getElementById('root')!
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
-    <RouterProvider router={router} />
+    <QueryClientProvider client={client}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   )
 }

@@ -2,18 +2,27 @@ import { LoginForm } from "@/components/login-form"
 import { useState } from "react"
 import AuthWelcomeView from "./AuthWelcomeView"
 import AuthLoadingView from "./AuthLoadingView"
+import AuthLicenseInfo from "./AuthLicenseInfoView"
+import AuthLicenseVerifiedView from "./AuthLicenseVerifiedView"
 
 
 const AuthView = () => {
 
   const [view, setView] = useState('loading')
 
+  const [ license , setLicense ] = useState<any|null>(null)
+
+  const handleSuccess = (data: any) => {
+      setLicense(data.license)
+      setView('license-info')
+  }
+
   return (
     <div className="size-full flex">
 
       {
         view == 'loading' && (
-          <AuthLoadingView />
+          <AuthLoadingView view={view} setView={setView}/>
         )
       }
 
@@ -24,8 +33,20 @@ const AuthView = () => {
       }
 
       {
+        view == 'license-info' && (
+          <AuthLicenseInfo license={license} view={view} setView={setView}/>
+        )
+      }
+
+      {
+        view == 'verified' && (
+          <AuthLicenseVerifiedView />
+        )
+      }
+
+      {
         view == 'login' && (
-          <LoginForm />
+          <LoginForm onSuccess={handleSuccess}/>
         )
       }
 

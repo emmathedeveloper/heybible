@@ -1,19 +1,29 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import toast from "react-hot-toast"
+type AuthLoadingViewProps = {
+    view: any,
+    setView: any
+}
+const AuthLoadingView = ({ setView }: AuthLoadingViewProps) => {
 
-
-const AuthLoadingView = () => {
+    const [currentStep, setCurrentStep] = useState("INITIALIZING...")
 
     const init = async () => {
-
         const stepHandler = (_: unknown, step: string) => {
-            console.log(step);
+            setCurrentStep(step)
         };
-
         window.ipcRenderer.on("load-license-key:step", stepHandler);
-
         try {
-            await window.ipcRenderer.invoke("load-license-key");
-        } finally {
+            const data = await window.ipcRenderer.invoke("load-license-key");
+            
+            if(!data.valid){
+                setView("login")
+                toast.error(data.error)
+            }else{
+                setView("verified")
+            }
+        }
+        finally {
             window.ipcRenderer.off("load-license-key:step", stepHandler);
         }
     }
@@ -23,10 +33,9 @@ const AuthLoadingView = () => {
     }, [])
 
     return (
-        <div className='flex flex-col flex-1'>
-            <h1>Loading</h1>
+        <div className='flex flex-col flex-1 items-center justify-center'>
+            {currentStep && <p className="animate-pulse">{currentStep.replace(/_/g , " ")}</p>}
         </div>
     )
 }
-
 export default AuthLoadingView
