@@ -3,8 +3,8 @@ import { startAISession, endAISession, AISession, createBlob } from "./ai"
 import { createMainWindow, createProjectorWindow, windows } from "./window-management"
 import { LicenseManager } from "./license-manager"
 import { hostname, userInfo } from "node:os"
+import { VITE_DEV_SERVER_URL } from "./main"
 
-export const LICENSE_API_URL = true ? "http://localhost:3001/api" : ""
 export const PUBLIC_KEY = `
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuy7SIcO4mKHl1tAg+d86h1uEblLukjjrkkkweiYfEehxlWWj3mfe5vov5PoEkEICvF2lWzXBuiDElA/YMhaJHyauM6GpKrxVfuhWiTczh402kWnNl2v73j0KZXD5Syha2YCD7zqehRg2x67ezGVExuWOmhvt6XQpkTjztZ4KXXy0OqHB8tODFYwtaFBvuQuPjgrZbB8IsW0tYsD7SIaugefBlSM9mzA7sycR+s2uJBDAoL9mZc5fO5F8tB+7JQJM/wv+fKfdscRhzHgdhC8wd6L0K+itDGhEpB7B0fDLMfiwiIRcIx3PxGU9Sy2bD3tvPMTfYyaBtGMOmkqp2cJiDQIDAQAB
 `
@@ -31,6 +31,8 @@ export const initIPC = () => {
 
       // Step 2: Online verification — registers device and checks revocation status
       onStepCallback("VERIFYING_LICENSE")
+      const LICENSE_API_URL = VITE_DEV_SERVER_URL ? "http://localhost:3001/api" : "https://heybible-server.onrender.com/api"
+
       const result = await licenseManager.verifyOnline(license, LICENSE_API_URL, {
         appVersion: process.env.npm_package_version,
         os: process.platform,
