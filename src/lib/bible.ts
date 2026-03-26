@@ -8,13 +8,17 @@ export type Verse = {
     text: string
 }
 
+export type VerseWithTranslation = Verse & { translation: string }
+
 type BibleStoreType = {
     activeVersion: string,
     currentBook: string,
     currentChapter: number,
     currentVerseNumber: number,
 
-    currentVerse: Verse | null
+    currentVerse: Verse | null,
+
+    bibleCache: Map<string , Verse[]>
 
     getBiblePassage: (book: string, chapter: number, verse?: number) => Promise<Verse>,
     navigateToVerse: (direction: 'next' | 'previous' | 'jump', steps: number, target_verse?: number) => Promise<Verse>,
@@ -32,15 +36,16 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
 
     currentVerse: null,
 
+    bibleCache: new Map<string, Verse[]>(),
 
 
     async getBiblePassage(book: string, chapter: number, verse?: number) {
         try {
 
 
-            const { activeVersion } = get()
+            const { activeVersion , bibleCache } = get()
 
-            const cache = BibleCache.get(`${book}:${chapter}:${activeVersion}`)
+            const cache = bibleCache.get(`${book}:${chapter}:${activeVersion}`)
             
             const verseNum = verse ?? 1;
             const ref = `${book}+${chapter}`;
@@ -57,7 +62,7 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
                     currentVerse: foundVerse
                 })
 
-                return foundVerse
+                return { ...foundVerse , translation: activeVersion }
             }
 
             const response = await fetch(`https://bible-api.com/${ref}?translation=${activeVersion.toLowerCase()}`);
@@ -65,18 +70,20 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
 
             const foundVerse = data.verses.find((v: Verse) => v.verse == verseNum)
 
+            const newCache = new Map(bibleCache)
+
+            newCache.set(`${book}:${chapter}:${activeVersion}`, data.verses)
+
             set({
                 currentBook: book,
                 currentChapter: chapter,
                 currentVerseNumber: verseNum,
-                currentVerse: foundVerse
+                currentVerse: foundVerse,
+                bibleCache: newCache
             })
 
-            console.log(foundVerse)
 
-            BibleCache.set(`${book}:${chapter}:${activeVersion}`, data.verses)
-
-            return foundVerse
+            return {...foundVerse , translation: activeVersion }
         } catch (error) {
             return { success: false, error: 'Failed to fetch passage' };
         }

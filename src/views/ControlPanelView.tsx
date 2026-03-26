@@ -1,36 +1,40 @@
-import { Button } from "@/components/ui/button"
-import { useConnectionStore } from "@/lib/connection"
-import { useRecordingStore } from "@/lib/recording"
+import BibleHistoryPane from "@/components/bible-history-pane"
+import DesignPane from "@/components/design-pane"
+import PreviewBox from "@/components/preview-box"
+import RecorderBox from "@/components/recorder-box"
+import { SplitPane, Pane } from "react-split-pane"
 
 const ControlPanelView = () => {
-
-    const { setOnAudioChunk, isRecording, start, stop } = useRecordingStore()
-    const { sendMessage , status , connect , disconnect } = useConnectionStore()
-
-    const handleClick = async () => {
-
-        if (!isRecording) {
-            connect()
-
-            setOnAudioChunk((audioData) => {
-                sendMessage({ type: 'realtimeInput', audioData })
-            })
-
-            await start();
-        } else {
-            disconnect()
-
-            stop();
-
-            setOnAudioChunk(undefined)
-        }
-    }
-
     return (
-        <div className="size-full flex items-center justify-center">
-            <Button onClick={handleClick}>
-                {!isRecording && status == 'disconnected'  ? "Start Session" : "End Session"}
-            </Button>
+        <div className='size-full'>
+            <SplitPane
+                dividerClassName="bg-secondary"
+                dividerStyle={{ width: '3px' }}
+                direction="horizontal"
+            >
+                <Pane minSize={'300px'} defaultSize={'300px'}>
+                    <BibleHistoryPane />
+                </Pane>
+
+                <Pane minSize={'600px'}>
+                    <SplitPane
+                        dividerClassName="bg-secondary"
+                        dividerStyle={{ height: '3px' }}
+                        direction="vertical"
+                    >
+                        <Pane minSize={'400px'} defaultSize={'400px'}>
+                            <PreviewBox />
+                        </Pane>
+                        <Pane minSize={'400px'}>
+                            <RecorderBox />
+                        </Pane>
+                    </SplitPane>
+                </Pane>
+
+                <Pane minSize={'300px'} defaultSize={'300px'}>
+                    <DesignPane />
+                </Pane>
+            </SplitPane>
         </div>
     )
 }

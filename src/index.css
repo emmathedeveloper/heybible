@@ -116,6 +116,10 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -133,5 +137,14 @@
   html,
   #root {
     @apply h-svh w-screen
+  }
+}
+
+@layer utilities {
+  .verse {
+    font-size: clamp(1rem, 3.5vw, 5rem);
+  }
+  .verse-sub {
+    font-size: clamp(0.5rem, 2.5vw, 3rem);
   }
 }

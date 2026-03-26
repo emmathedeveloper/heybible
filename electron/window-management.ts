@@ -70,6 +70,11 @@ export function createAuthWindow() {
       { query: { view: 'auth' } }
     )
   }
+
+  windows.auth.once('ready-to-show', () => {
+    windows.auth?.maximize(); // Maximize when ready to show
+    windows.auth?.show();
+  });
 }
 
 export function createMainWindow() {
@@ -90,6 +95,11 @@ export function createMainWindow() {
       { query: { view: 'control-panel' } }
     )
   }
+
+  windows.main.once('ready-to-show', () => {
+    windows.main?.maximize(); // Maximize when ready to show
+    windows.main?.show();
+  });
 }
 
 export async function createProjectorWindow() {
@@ -99,8 +109,14 @@ export async function createProjectorWindow() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
     },
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    titleBarStyle: 'hidden'
   })
+
+  windows.projector.once('ready-to-show', () => {
+    windows.projector?.maximize(); // Maximize when ready to show
+    windows.projector?.show();
+  });
 
   if (VITE_DEV_SERVER_URL) {
     await windows.projector.loadURL(`${VITE_DEV_SERVER_URL}?view=projector`)

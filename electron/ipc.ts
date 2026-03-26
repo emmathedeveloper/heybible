@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain } from "electron"
+import { BrowserWindow, desktopCapturer, ipcMain, session } from "electron"
 import { createMainWindow, createProjectorWindow, windows } from "./window-management"
 import { LicenseManager } from "./license-manager"
 import { hostname, userInfo } from "node:os"
@@ -22,7 +22,6 @@ export const initIPC = () => {
       // Resolve license key: use provided arg or fall back to stored one
       const license = licenseKey ?? await licenseManager.getLicense()
 
-      await new Promise(r => setTimeout(r, 500));
       if (!license) {
         onStepCallback("NO_LICENSE_FOUND")
         return { valid: false, error: "No license found" }
@@ -30,7 +29,7 @@ export const initIPC = () => {
 
       // Step 2: Online verification — registers device and checks revocation status
       onStepCallback("VERIFYING_LICENSE")
-      const LICENSE_API_URL = VITE_DEV_SERVER_URL ? "http://localhost:3001/api" : "https://heybible-server.onrender.com/api"
+      const LICENSE_API_URL = !VITE_DEV_SERVER_URL ? "http://localhost:3001/api" : "https://heybible-server.onrender.com/api"
 
       const result = await licenseManager.verifyOnline(license, LICENSE_API_URL, {
         appVersion: process.env.npm_package_version,
@@ -90,7 +89,11 @@ export const initIPC = () => {
     createMainWindow()
   })
 
-  ipcMain.on('message:projector', (_, { type, verse }) => {
-    windows.projector?.webContents.send(type, { verse })
+  ipcMain.on('message:projector', (_, { type, ...data }) => {
+    windows.projector?.webContents.send(type, data)
+  })
+
+  ipcMain.handle('get-projector-id', async (_) => {
+    
   })
 }
