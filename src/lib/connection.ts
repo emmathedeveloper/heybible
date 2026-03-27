@@ -16,7 +16,7 @@ export const useConnectionStore = create<ConnectionStore>((set, get) => ({
   status: 'disconnected',
 
   connect: () => {
-    const socket = new WebSocket('wss://heybible-server.onrender.com/ws')
+    const socket = new WebSocket('wss://heybible-server-jzxz.onrender.com/ws')
 
     socket.onopen = () => {
       set({ status: 'connected' })
