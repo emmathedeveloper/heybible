@@ -1,0 +1,37 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 1,
+    "text": "Shout with joy to the LORD, all the earth!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 2,
+    "text": "Worship the LORD with gladness. Come before him, singing with joy."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 3,
+    "text": "Acknowledge that the LORD is God! He made us, and we are his. We are his people, the sheep of his pasture."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 4,
+    "text": "Enter his gates with thanksgiving; go into his courts with praise. Give thanks to him and praise his name."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 5,
+    "text": "For the LORD is good. His unfailing love continues forever, and his faithfulness continues to each generation. A psalm of David."
+  }
+]

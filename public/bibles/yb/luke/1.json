@@ -1,0 +1,562 @@
+[
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 1,
+    "text": "NIWỌNBI ọ̀pọ enia ti dawọle e lati tò ìhin wọnni jọ lẹsẹsẹ, eyiti o ti gbilẹ ṣinṣin lãrin wa,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 2,
+    "text": "Ani gẹgẹ bi awọn ti o ṣe oju wọn lati ibẹrẹ, ti nwọn si jasi iranṣẹ ọrọ na, ti fi le wa lọwọ;"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 3,
+    "text": "O si yẹ fun mi pẹlu, lati kọwe si ọ lẹsẹsẹ bi mo ti wadi ohun gbogbo kinikini si lati ipilẹsẹ, Teofilu ọlọla jùlọ,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 4,
+    "text": "Ki iwọ ki o le mọ̀ ọtitọ ohun wọnni, ti a ti kọ́ ọ."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 5,
+    "text": "Nigba ọjọ Herodu ọba Judea, alufa kan wà, ni ipa ti Abia, orukọ rẹ̀ a ma jẹ Sakariah: aya rẹ̀ si ṣe ọkan ninu awọn ọmọbinrin Aaroni, orukọ rẹ̀ a si ma jẹ Elisabeti."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 6,
+    "text": "Awọn mejeji si ṣe olododo niwaju Ọlọrun, nwọn nrìn ni gbogbo ofin on ìlana Oluwa li ailẹgan."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 7,
+    "text": "Ṣugbọn nwọn kò li ọmọ, nitoriti Elisabeti yàgan, awọn mejeji si di arugbo."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 8,
+    "text": "O si ṣe, nigbati o nṣe iṣẹ alufa niwaju Ọlọrun ni ipa iṣẹ́ tirẹ̀,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 9,
+    "text": "Bi iṣe awọn alufa, ipa tirẹ̀ ni ati ma fi turari jóna, nigbati o ba wọ̀ inu tẹmpili Oluwa lọ."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 10,
+    "text": "Gbogbo ijọ awọn enia si ngbadura lode li akokò sisun turari."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 11,
+    "text": "Angẹli Oluwa kan si fi ara hàn a, o duro li apa ọtún pẹpẹ turari."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 12,
+    "text": "Nigbati Sakariah si ri i, ori rẹ̀ wúle, ẹ̀ru si ba a."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 13,
+    "text": "Ṣugbọn angẹli na wi fun u pe, Má bẹ̀ru, Sakariah: nitoriti adura rẹ gbà; Elisabeti aya rẹ yio si bí ọmọkunrin kan fun ọ, iwọ o si sọ orukọ rẹ̀ ni Johanu."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 14,
+    "text": "Iwọ o si li ayọ̀ ati inu didùn: enia pipọ yio si yọ̀ si ibí rẹ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 15,
+    "text": "Nitori on o pọ̀ niwaju Oluwa, kì yio si mu ọti-waini, bẹ̃ni kì yio si mu ọti-lile; yio si kún fun Ẹmi Mimọ́ ani lati inu iya rẹ̀ wá."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 16,
+    "text": "On o si pa pipọ da ninu awọn ọmọ Israeli si Oluwa Ọlọrun wọn."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 17,
+    "text": "Ẹmí ati agbara Elijah ni on o si fi ṣaju rẹ̀ lọ, lati pa ọkàn awọn baba dà si ti awọn ọmọ, ati ti awọn alaigbọran si ọgbọ́n awọn olõtọ; ki o le pèse enia ti a mura silẹ dè Oluwa."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 18,
+    "text": "Sakariah si wi fun angẹli na pe, Àmi wo li emi o fi mọ̀ eyi? Emi sá di àgba, ati Elisabeti aya mi si di arugbo."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 19,
+    "text": "Angẹli na si dahùn o wi fun u pe, Emi ni Gabrieli, ti ima duro niwaju Ọlọrun; emi li a rán wá lati sọ fun ọ, ati lati mu ìhin ayọ̀ wọnyi fun ọ wá."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 20,
+    "text": "Si kiyesi i, iwọ o yadi, iwọ kì yio si le fọhun, titi ọjọ na ti nkan wọnyi yio fi ṣẹ, nitori iwọ ko gbà ọ̀rọ mi gbọ́ ti yio ṣẹ li akokò wọn."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 21,
+    "text": "Awọn enia si duro dè Sakariah, ẹnu si yà wọn nitoriti o pẹ ninu tẹmpili."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 22,
+    "text": "Nigbati o si jade, kò le fọhun si wọn: nwọn si woye pe o ri iran ninu tẹmpili: nitoriti o nṣe apẹrẹ si wọn, o si yà odi."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 23,
+    "text": "O si ṣe, nigbati ọjọ iṣẹ isin rẹ̀ pe, o lọ si ile rẹ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 24,
+    "text": "Lẹhin ọjọ wọnyi ni Elisabeti aya rẹ̀ lóyun, o si fi ara rẹ̀ pamọ́ li oṣù marun, o ni,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 25,
+    "text": "Bayi li Oluwa ṣe fun mi li ọjọ ti o ṣijuwò mi, lati mu ẹ̀gan mi kuro lọdọ araiye."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 26,
+    "text": "Li oṣù kẹfa a si rán angẹli Gabrieli lati ọdọ Ọlọrun lọ si ilu kan ni Galili, ti a npè ni Nasareti,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 27,
+    "text": "Si wundia kan ti a fẹ fun ọkunrin kan, ti a npè ni Josefu, ti idile Dafidi; orukọ wundia na a si ma jẹ Maria."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 28,
+    "text": "Angẹli na si tọ̀ ọ wá, o ni, Alãfia iwọ ẹniti a kọjusi ṣe li ore, Oluwa pẹlu rẹ: alabukun-fun ni iwọ ninu awọn obinrin."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 29,
+    "text": "Ṣugbọn ọkàn rẹ̀ kò lelẹ nitori ọ̀rọ na, o si rò ninu ara rẹ̀ pe, irú kíki kili eyi."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 30,
+    "text": "Angẹli na si wi fun u pe, Má bẹ̀ru, Maria: nitori iwọ ti ri ojurere lọdọ Ọlọrun."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 31,
+    "text": "Sá si kiyesi i, iwọ o lóyun ninu rẹ, iwọ o si bí ọmọkunrin kan, iwọ o si pè orukọ rẹ̀ ni JESU."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 32,
+    "text": "On o pọ̀, Ọmọ Ọgá-ogo julọ li a o si ma pè e: Oluwa Ọlọrun yio si fi itẹ́ Dafidi baba rẹ̀ fun u:"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 33,
+    "text": "Yio si jọba ni ile Jakọbu titi aiye; ijọba rẹ̀ ki yio si ni ipẹkun."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 34,
+    "text": "Nigbana ni Maria wi fun angẹli na pe, Eyi yio ha ti ṣe ri bẹ̃, nigbati emi kò ti mọ̀ ọkunrin?"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 35,
+    "text": "Angẹli na si dahùn o si wi fun u pe, Ẹmí Mimọ́ yio tọ̀ ọ wá, ati agbara Ọgá-ogo yio ṣiji bò ọ: nitorina ohun mimọ́ ti a o ti inu rẹ bi, Ọmọ Ọlọrun li a o ma pè e."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 36,
+    "text": "Si kiyesi i, Elisabeti ibatan rẹ, on pẹlu si lóyun ọmọkunrin kan li ogbologbo rẹ̀: eyi si li oṣu kẹfa fun ẹniti a npè li agàn."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 37,
+    "text": "Nitori kò si ohun ti Ọlọrun ko le ṣe."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 38,
+    "text": "Maria si wipe, Wò ọmọ-ọdọ Oluwa; ki o ri fun mi gẹgẹ bi ọ̀rọ rẹ. Angẹli na si fi i silẹ lọ."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 39,
+    "text": "Ni ijọ wọnyi ni Maria si dide, o lọ kánkan si ilẹ-òke, si ilu kan ni Juda;"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 40,
+    "text": "O si wọ̀ ile Sakariah lọ o si ki Elisabeti."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 41,
+    "text": "O si ṣe, nigbati Elisabeti gbọ́ kikí Maria, ọlẹ̀ sọ ninu rẹ̀; Elisabeti si kún fun Ẹmí Mimọ́:"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 42,
+    "text": "O si ke li ohùn rara, o si wipe, Alabukun-fun ni iwọ ninu awọn obinrin, alabukun-fun si ni fun ọmọ inu rẹ."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 43,
+    "text": "Nibo si li eyi ti wá ba mi, ti iya Oluwa mi iba fi tọ̀ mi wá?"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 44,
+    "text": "Sawò o, bi ohùn kikí rẹ ti bọ́ si mi li etí, ọlẹ̀ sọ ninu mi fun ayọ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 45,
+    "text": "Alabukun-fun si li ẹniti o gbagbọ́: nitori nkan wọnyi ti a ti sọ fun u lati ọdọ Oluwa wá yio ṣẹ."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 46,
+    "text": "Maria si dahùn, o ni, Ọkàn mi yìn Oluwa logo,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 47,
+    "text": "Ẹmí mi si yọ̀ si Ọlọrun Olugbala mi."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 48,
+    "text": "Nitoriti o ṣijuwò ìwa irẹlẹ ọmọbinrin ọdọ rẹ̀: sá wò o, lati isisiyi lọ gbogbo iran enia ni yio ma pè mi li alabukunfun."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 49,
+    "text": "Nitori ẹniti o li agbara ti ṣe ohun ti o tobi fun mi; mimọ́ si li orukọ rẹ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 50,
+    "text": "Anu rẹ̀ si mbẹ fun awọn ti o bẹ̀ru rẹ̀ lati irandiran."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 51,
+    "text": "O ti fi agbara hàn li apa rẹ̀; o ti tú awọn onirera ká ni ironu ọkàn wọn."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 52,
+    "text": "O ti mu awọn alagbara kuro lori itẹ́ wọn, o si gbé awọn talakà leke."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 53,
+    "text": "O ti fi ohun ti o dara kún awọn ti ebi npa; o si rán awọn ọlọrọ̀ pada lọwọ ofo."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 54,
+    "text": "O ti ràn Israeli ọmọ-ọdọ rẹ̀ lọwọ, ni iranti ãnu rẹ̀;"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 55,
+    "text": "Bi o ti sọ fun awọn baba wa, fun Abrahamu, ati fun irú-ọmọ rẹ̀ lailai."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 56,
+    "text": "Maria si ba a joko niwọn oṣù mẹta, o si pada lọ si ile rẹ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 57,
+    "text": "Ọjọ Elisabeti pe wayi ti yio bí; o si bí ọmọkunrin kan."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 58,
+    "text": "Ati awọn aladugbo, ati awọn ibatan rẹ̀ gbọ́ bi Oluwa ti ṣe ãnu nla fun u; nwọn si ba a yọ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 59,
+    "text": "O si ṣe, ni ijọ kẹjọ nwọn wá lati kọ ọmọ na nila; nwọn si sọ orukọ rẹ̀ ni Sakariah, gẹgẹ bi orukọ baba rẹ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 60,
+    "text": "Iya rẹ̀ si dahùn, o ni Bẹ̃kọ; bikoṣe Johanu li a o pè e."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 61,
+    "text": "Nwọn si wi fun u pe, Kò si ọkan ninu awọn ará rẹ ti a npè li orukọ yi."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 62,
+    "text": "Nwọn si ṣe apẹrẹ si baba rẹ̀, bi o ti nfẹ ki a pè e."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 63,
+    "text": "O si bère walã, o kọ, wipe, Johanu li orukọ rẹ̀. Ẹnu si yà gbogbo wọn."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 64,
+    "text": "Ẹnu rẹ̀ si ṣí lọgan, okùn ahọn rẹ̀ si tú, o si sọ̀rọ, o si nyìn Ọlọrun."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 65,
+    "text": "Ẹ̀ru si ba gbogbo awọn ti mbẹ li àgbegbe wọn: a si rohin gbogbo nkan wọnyi ká gbogbo ilẹ òke Judea."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 66,
+    "text": "Gbogbo awọn ti o gbọ́ si tò o sinu ọkàn wọn, nwọn nwipe, Irú ọmọ kili eyi yio jẹ! Ọwọ́ Oluwa si wà pẹlu rẹ̀."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 67,
+    "text": "Sakariah baba rẹ̀ si kún fun Ẹmí Mimọ́, o si sọtẹlẹ, o ni,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 68,
+    "text": "Olubukun li Oluwa Ọlọrun Israeli; nitoriti o ti bojuwò, ti o si ti dá awọn enia rẹ̀ nide,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 69,
+    "text": "O si ti gbé iwo igbala soke fun wa ni ile Dafidi ọmọ-ọdọ rẹ̀;"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 70,
+    "text": "Bi o ti wi li ẹnu awọn woli rẹ̀ mimọ́, ti nwọn ti mbẹ nigbati aiye ti ṣẹ̀:"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 71,
+    "text": "Pe, a o gbà wa là lọwọ awọn ọtá wa, ati lọwọ gbogbo awọn ti o korira wa;"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 72,
+    "text": "Lati ṣe ãnu ti o ti leri fun awọn baba wa, ati lati ranti majẹmu rẹ̀ mimọ́,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 73,
+    "text": "Ara ti o ti bú fun Abrahamu baba wa,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 74,
+    "text": "Pe on o fifun wa, lati gbà wa lọwọ awọn ọtá wa, ki awa ki o le ma sìn i laifòya,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 75,
+    "text": "Ni mimọ́ ìwa ati li ododo niwaju rẹ̀, li ọjọ aiye wa gbogbo."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 76,
+    "text": "Ati iwọ, ọmọ, woli Ọgá-ogo li a o ma pè ọ: nitori iwọ ni yio ṣaju Oluwa lati tún ọ̀na rẹ̀ ṣe;"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 77,
+    "text": "Lati fi ìmọ igbala fun awọn enia rẹ̀ fun imukuro ẹ̀ṣẹ wọn,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 78,
+    "text": "Nitori iyọ́nu Ọlọrun wa; nipa eyiti ìla-õrùn lati oke wá bojuwò wa,"
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 79,
+    "text": "Lati fi imọlẹ fun awọn ti o joko li òkunkun ati li ojiji ikú, ati lati fi ẹsẹ wa le ọ̀na alafia."
+  },
+  {
+    "book_id": "LUK",
+    "book_name": "Luke",
+    "chapter": 1,
+    "verse": 80,
+    "text": "Ọmọ na si dàgba, o si le li ọkàn, o si wà ni ijù titi o fi di ọjọ ifihàn rẹ̀ fun Israeli."
+  }
+]

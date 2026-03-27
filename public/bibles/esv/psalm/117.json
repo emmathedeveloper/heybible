@@ -1,0 +1,16 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 117,
+    "verse": 1,
+    "text": "Praise the LORD, all nations! Extol him, all peoples!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 117,
+    "verse": 2,
+    "text": "For great is his steadfast love toward us, and the faithfulness of the LORD endures forever. Praise the LORD!"
+  }
+]

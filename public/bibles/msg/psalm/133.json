@@ -1,0 +1,23 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 133,
+    "verse": 1,
+    "text": "A pilgrim song of David. How wonderful, how beautiful, when brothers and sisters get along!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 133,
+    "verse": 2,
+    "text": "It's like costly anointing oil flowing down head and beard, Flowing down Aaron's beard, flowing down the collar of his priestly robes."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 133,
+    "verse": 3,
+    "text": "It's like the dew on Mount Hermon flowing down the slopes of Zion. Yes, that's where GOD commands the blessing, ordains eternal life."
+  }
+]

@@ -29,7 +29,8 @@ export const initIPC = () => {
 
       // Step 2: Online verification — registers device and checks revocation status
       onStepCallback("VERIFYING_LICENSE")
-      const LICENSE_API_URL = VITE_DEV_SERVER_URL ? "http://localhost:3001/api" : "https://heybible-server.onrender.com/api"
+
+      const LICENSE_API_URL = "https://heybible-server.onrender.com/api"
 
       const result = await licenseManager.verifyOnline(license, LICENSE_API_URL, {
         appVersion: process.env.npm_package_version,

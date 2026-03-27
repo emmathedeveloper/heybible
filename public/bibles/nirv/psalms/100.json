@@ -1,0 +1,37 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 1,
+    "text": "A psalm for giving thanks. Shout to the Lord with joy, everyone on earth."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 2,
+    "text": "Worship the Lord with gladness. Come to him with songs of joy."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 3,
+    "text": "I want you to realize that the Lord is God. He made us, and we belong to him. We are his people. We are the sheep belonging to his flock."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 4,
+    "text": "Give thanks as you enter the gates of his temple. Give praise as you enter its courtyards. Give thanks to him and praise his name."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 5,
+    "text": "The Lord is good. His faithful love continues forever. It will last for all time to come."
+  }
+]

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const SUPPORTED_TRANSLATIONS = ['kjv' , 'web' , 'ylt']
+const SUPPORTED_TRANSLATIONS = ["NLT", "NASB", "NKJV", "AMP", "MSG", "ESV", "NIRV", "NIV", "KJV", "ERV", "YB"]
 
 export type Verse = {
     book_id: string,
@@ -20,7 +20,7 @@ type BibleStoreType = {
 
     currentVerse: Verse | null,
 
-    bibleCache: Map<string , Verse[]>
+    bibleCache: Map<string, Verse[]>
 
     getBiblePassage: (book: string, chapter: number, verse?: number) => Promise<Verse>,
     navigateToVerse: (direction: 'next' | 'previous' | 'jump', steps: number, target_verse?: number) => Promise<Verse>,
@@ -43,12 +43,11 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
         try {
 
 
-            const { activeVersion , bibleCache } = get()
+            const { activeVersion, bibleCache } = get()
 
             const cache = bibleCache.get(`${book}:${chapter}:${activeVersion}`)
-            
+
             const verseNum = verse ?? 1;
-            const ref = `${book}+${chapter}`;
 
             if (cache) {
                 const foundVerse = cache.find((v: Verse) => v.verse == verseNum)
@@ -62,17 +61,18 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
                     currentVerse: foundVerse
                 })
 
-                return { ...foundVerse , translation: activeVersion }
+                return { ...foundVerse, translation: activeVersion }
             }
 
-            const response = await fetch(`https://bible-api.com/${ref}?translation=${activeVersion.toLowerCase()}`);
+            const response = await fetch(`./bibles/${activeVersion.toLowerCase()}/${book.replace(' ', '_').toLowerCase()}/${chapter}.json`);
+            
             const data = await response.json();
 
-            const foundVerse = data.verses.find((v: Verse) => v.verse == verseNum)
+            const foundVerse = data.find((v: Verse) => v.verse == verseNum)
 
             const newCache = new Map(bibleCache)
 
-            newCache.set(`${book}:${chapter}:${activeVersion}`, data.verses)
+            newCache.set(`${book}:${chapter}:${activeVersion}`, data)
 
             set({
                 currentBook: book,
@@ -83,7 +83,7 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
             })
 
 
-            return {...foundVerse , translation: activeVersion }
+            return { ...foundVerse, translation: activeVersion }
         } catch (error) {
             return { success: false, error: 'Failed to fetch passage' };
         }
@@ -104,7 +104,7 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
 
     async setBibleVersion(version: string) {
 
-        const v = SUPPORTED_TRANSLATIONS.find(v => v == version.toLowerCase()) || SUPPORTED_TRANSLATIONS[0]
+        const v = SUPPORTED_TRANSLATIONS.find(v => v.toLowerCase() == version.toLowerCase()) || SUPPORTED_TRANSLATIONS[0]
 
         set({ activeVersion: v.toUpperCase() })
 

@@ -1,0 +1,30 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 123,
+    "verse": 1,
+    "text": "IWỌ ni mo gbé oju mi soke si, iwọ ti ngbe inu ọrun."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 123,
+    "verse": 2,
+    "text": "Kiyesi i, bi oju awọn iranṣẹkunrin ti ima wò ọwọ awọn baba wọn, ati bi oju iranṣẹ-birin ti ima wò ọwọ iya rẹ̀; bẹ̃li oju wa nwò Oluwa Ọlọrun wa, titi yio fi ṣãnu fun wa."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 123,
+    "verse": 3,
+    "text": "Oluwa, ṣãnu fun wa, ṣãnu fun wa: nitori ti a kún fun ẹ̀gan pupọ̀-pupọ̀."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 123,
+    "verse": 4,
+    "text": "Ọkàn wa kún pupọ̀-pupọ̀ fun ẹ̀gan awọn onirera, ati fun ẹ̀gan awọn agberaga."
+  }
+]

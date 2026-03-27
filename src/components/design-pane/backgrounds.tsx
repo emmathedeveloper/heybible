@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 
 
 const BACKGROUNDS = [
-    '/backgrounds/images/blob-scene.png',
-    '/backgrounds/images/blob.png',
-    '/backgrounds/images/circle-scatter.png',
-    '/backgrounds/images/layered-steps.png',
-    '/backgrounds/images/stacked-waves.png',
-    '/backgrounds/images/wave.png',
+    './backgrounds/images/blob-scene.png',
+    './backgrounds/images/blob.png',
+    './backgrounds/images/circle-scatter.png',
+    './backgrounds/images/layered-steps.png',
+    './backgrounds/images/stacked-waves.png',
+    './backgrounds/images/wave.png',
 ]
 
 const DesignPaneBackgrounds = () => {

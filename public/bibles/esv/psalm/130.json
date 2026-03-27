@@ -1,0 +1,58 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 1,
+    "text": "A SONG OF ASCENTS.Out of the depths I cry to you, O LORD!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 2,
+    "text": "O Lord, hear my voice! Let your ears be attentive to the voice of my pleas for mercy!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 3,
+    "text": "If you, O LORD, should mark iniquities, O Lord, who could stand?"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 4,
+    "text": "But with you there is forgiveness, that you may be feared."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 5,
+    "text": "I wait for the LORD, my soul waits, and in his word I hope;"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 6,
+    "text": "my soul waits for the Lord more than watchmen for the morning, more than watchmen for the morning."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 7,
+    "text": "O Israel, hope in the LORD! For with the LORD there is steadfast love, and with him is plentiful redemption."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 130,
+    "verse": 8,
+    "text": "And he will redeem Israel from all his iniquities."
+  }
+]

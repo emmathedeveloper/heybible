@@ -1,0 +1,23 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 134,
+    "verse": 1,
+    "text": "Oh, praise the LORD, all you servants of the LORD, you who serve at night in the house of the LORD."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 134,
+    "verse": 2,
+    "text": "Lift up holy hands in prayer, and praise the LORD."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 134,
+    "verse": 3,
+    "text": "May the LORD, who made heaven and earth, bless you from Jerusalem."
+  }
+]

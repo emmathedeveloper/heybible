@@ -1,0 +1,37 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 1,
+    "text": "A PSALM FOR GIVING THANKS. Make a joyful noise to the LORD, all the earth!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 2,
+    "text": "Serve the LORD with gladness! Come into his presence with singing!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 3,
+    "text": "Know that the LORD, he is God! It is he who made us, and we are his; we are his people, and the sheep of his pasture."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 4,
+    "text": "Enter his gates with thanksgiving, and his courts with praise! Give thanks to him; bless his name!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 100,
+    "verse": 5,
+    "text": "For the LORD is good; his steadfast love endures forever, and his faithfulness to all generations."
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 126,
+    "verse": 1,
+    "text": "When the LORD brought back the captives to Zion, we were like men who dreamed."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 126,
+    "verse": 2,
+    "text": "Our mouths were filled with laughter, our tongues with songs of joy. Then it was said among the nations, \"The LORD has done great things for them.\""
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 126,
+    "verse": 3,
+    "text": "The LORD has done great things for us, and we are filled with joy."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 126,
+    "verse": 4,
+    "text": "Restore our fortunes, O LORD, like streams in the Negev."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 126,
+    "verse": 5,
+    "text": "Those who sow in tears will reap with songs of joy."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 126,
+    "verse": 6,
+    "text": "He who goes out weeping, carrying seed to sow, will return with songs of joy, carrying sheaves with him."
+  }
+]

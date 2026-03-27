@@ -1,0 +1,44 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 23,
+    "verse": 1,
+    "text": "A PSALM OF DAVID.The LORD is my shepherd; I shall not want."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 23,
+    "verse": 2,
+    "text": "He makes me lie down in green pastures. He leads me beside still waters."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 23,
+    "verse": 3,
+    "text": "He restores my soul. He leads me in paths of righteousness for his name's sake."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 23,
+    "verse": 4,
+    "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 23,
+    "verse": 5,
+    "text": "You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 23,
+    "verse": 6,
+    "text": "Surely goodness and mercy shall follow me all the days of my life, and I shall dwell in the house of the LORD forever."
+  }
+]

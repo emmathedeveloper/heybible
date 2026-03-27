@@ -1,0 +1,30 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 1,
+    "text": "A Song of Ascents. UNTO YOU do I lift up my eyes, O You Who are enthroned in heaven."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 2,
+    "text": "Behold, as the eyes of servants look to the hand of their master, and as the eyes of a maid to the hand of her mistress, so our eyes look to the Lord our God, until He has mercy and loving-kindness for us."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 3,
+    "text": "Have mercy on us, O Lord, have mercy on and loving-kindness for us, for we are exceedingly satiated with contempt."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 4,
+    "text": "Our life is exceedingly filled with the scorning and scoffing of those who are at ease and with the contempt of the proud (irresponsible tyrants who disregard God's law)."
+  }
+]

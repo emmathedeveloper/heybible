@@ -1,0 +1,44 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 150,
+    "verse": 1,
+    "text": "Ẹ fi iyìn fun Oluwa. Ẹ fi iyìn fun Ọlọrun ninu ibi mimọ́ rẹ̀; yìn i ninu ofurufu oju-ọrun agbara rẹ̀."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 150,
+    "verse": 2,
+    "text": "Yìn i nitori iṣẹ agbara rẹ̀: yìn i gẹgẹ bi titobi nla rẹ̀."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 150,
+    "verse": 3,
+    "text": "Fi ohùn ipè yìn i: fi ohun-èlo orin ati duru yìn i."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 150,
+    "verse": 4,
+    "text": "Fi ìlu ati ijó yìn i: fi ohun ọnà orin olokùn ati fère yìn i."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 150,
+    "verse": 5,
+    "text": "Ẹ yìn i lara aro olohùn òke: ẹ yìn i lara aro olohùn goro:"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 150,
+    "verse": 6,
+    "text": "Jẹ ki ohun gbogbo ti o li ẹmi ki o yìn Oluwa. Ẹ fi iyìn fun Oluwa."
+  }
+]

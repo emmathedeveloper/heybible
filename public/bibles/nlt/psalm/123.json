@@ -1,0 +1,30 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 1,
+    "text": "I lift my eyes to you, O God, enthroned in heaven."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 2,
+    "text": "We keep looking to the LORD our God for his mercy, just as servants keep their eyes on their master, as a slave girl watches her mistress for the slightest signal."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 3,
+    "text": "Have mercy on us, LORD, have mercy, for we have had our fill of contempt."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 123,
+    "verse": 4,
+    "text": "We have had more than our fill of the scoffing of the proud and the contempt of the arrogant. A song for pilgrims ascending to Jerusalem. A psalm of David."
+  }
+]

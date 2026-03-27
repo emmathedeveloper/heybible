@@ -1,0 +1,23 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 133,
+    "verse": 1,
+    "text": "A Song of Ascents; of David. Behold, how good and how pleasant it is for brethren to dwell together in unity!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 133,
+    "verse": 2,
+    "text": "It is like the precious oil upon the head, that ran down upon the beard, even Aaron’s beard; that came down upon the skirt of his garments;"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 133,
+    "verse": 3,
+    "text": "Like the dew of Hermon, that cometh down upon the mountains of Zion: for there the LORD commanded the blessing, even life for evermore."
+  }
+]
