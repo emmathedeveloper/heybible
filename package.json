@@ -1,7 +1,7 @@
 {
   "name": "heybible",
   "private": true,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "author": "Evberin Emmanuel <emmathedeveloper@gmail.com>",
   "description": "The Versatile Bible AI",
