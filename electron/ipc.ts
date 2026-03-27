@@ -2,7 +2,6 @@ import { BrowserWindow, ipcMain } from "electron"
 import { createMainWindow, createProjectorWindow, windows } from "./window-management"
 import { LicenseManager } from "./license-manager"
 import { hostname, userInfo } from "node:os"
-import { VITE_DEV_SERVER_URL } from "./main"
 
 export const PUBLIC_KEY = `
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuy7SIcO4mKHl1tAg+d86h1uEblLukjjrkkkweiYfEehxlWWj3mfe5vov5PoEkEICvF2lWzXBuiDElA/YMhaJHyauM6GpKrxVfuhWiTczh402kWnNl2v73j0KZXD5Syha2YCD7zqehRg2x67ezGVExuWOmhvt6XQpkTjztZ4KXXy0OqHB8tODFYwtaFBvuQuPjgrZbB8IsW0tYsD7SIaugefBlSM9mzA7sycR+s2uJBDAoL9mZc5fO5F8tB+7JQJM/wv+fKfdscRhzHgdhC8wd6L0K+itDGhEpB7B0fDLMfiwiIRcIx3PxGU9Sy2bD3tvPMTfYyaBtGMOmkqp2cJiDQIDAQAB
