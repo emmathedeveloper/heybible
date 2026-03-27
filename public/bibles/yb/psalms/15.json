@@ -1,0 +1,37 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 15,
+    "verse": 1,
+    "text": "OLUWA, tani yio ma ṣe atipo ninu agọ rẹ? tani yio ma gbe inu òke mimọ́ rẹ?"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 15,
+    "verse": 2,
+    "text": "Ẹniti o nrìn dede, ti nṣiṣẹ ododo, ti o si nsọ otitọ inu rẹ̀."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 15,
+    "verse": 3,
+    "text": "Ẹniti kò fi ahọn rẹ̀ sọ̀rọ ẹni lẹhin, ti kò si ṣe ibi si ẹnikeji rẹ̀, ti kò si gbà ọ̀rọ ẹ̀gan si ẹnikeji rẹ̀."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 15,
+    "verse": 4,
+    "text": "Li oju ẹniti enia-kenia di gigàn; ṣugbọn a ma bu ọla fun awọn ti o bẹ̀ru Oluwa. Ẹniti o bura si ibi ara rẹ̀, ti kò si yipada."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 15,
+    "verse": 5,
+    "text": "Ẹniti kò fi owo rẹ̀ gbà èle, ti kò si gbà owo ẹ̀bẹ si alaiṣẹ. Ẹniti o ba ṣe nkan wọnyi kì yio yẹsẹ lailai."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 133,
+    "verse": 1,
+    "text": "How good and pleasant it is when brothers live together in unity!"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 133,
+    "verse": 2,
+    "text": "It is like precious oil poured on the head, running down on the beard, running down on Aaron's beard, down upon the collar of his robes."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 133,
+    "verse": 3,
+    "text": "It is as if the dew of Hermon were falling on Mount Zion. For there the LORD bestows his blessing, even life forevermore."
+  }
+]

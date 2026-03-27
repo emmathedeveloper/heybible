@@ -1,0 +1,37 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 1,
+    "text": "Shout for joy to the LORD, all the earth."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 2,
+    "text": "Worship the LORD with gladness; come before him with joyful songs."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 3,
+    "text": "Know that the LORD is God. It is he who made us, and we are his; we are his people, the sheep of his pasture."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 4,
+    "text": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 100,
+    "verse": 5,
+    "text": "For the LORD is good and his love endures forever; his faithfulness continues through all generations."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "book_id": "EST",
+    "book_name": "Esther",
+    "chapter": 10,
+    "verse": 1,
+    "text": "AHASWERUSI ọba si fi owo ọba le ilẹ fun gbogbo ilẹ, ati gbogbo erekùṣu okun."
+  },
+  {
+    "book_id": "EST",
+    "book_name": "Esther",
+    "chapter": 10,
+    "verse": 2,
+    "text": "Ati gbogbo iṣe agbara rẹ̀, ati ti ipa rẹ̀, ati ìrohin titobi Mordekai, bi ọba ti sọ ọ di nla, a kò ha kọ wọn sinu iwe ọ̀rọ ọjọ awọn ọba Media ati Persia?"
+  },
+  {
+    "book_id": "EST",
+    "book_name": "Esther",
+    "chapter": 10,
+    "verse": 3,
+    "text": "Nitori Mordekai ara Juda li o ṣe igbakeji Ahaswerusi ọba, o si tobi ninu awọn Ju, o si ṣe itẹwọgbà lọdọ ọ̀pọlọpọ ninu awọn arakunrin rẹ̀, o nwá ire awọn enia rẹ̀, o si nsọ̀rọ alafia fun gbogbo awọn iru-ọmọ rẹ̀."
+  }
+]

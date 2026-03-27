@@ -1,0 +1,37 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 127,
+    "verse": 1,
+    "text": "Unless the LORD builds the house, its builders labor in vain. Unless the LORD watches over the city, the watchmen stand guard in vain."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 127,
+    "verse": 2,
+    "text": "In vain you rise early and stay up late, toiling for food to eat- for he grants sleep to those he loves."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 127,
+    "verse": 3,
+    "text": "Sons are a heritage from the LORD, children a reward from him."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 127,
+    "verse": 4,
+    "text": "Like arrows in the hands of a warrior are sons born in one's youth."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalms",
+    "chapter": 127,
+    "verse": 5,
+    "text": "Blessed is the man whose quiver is full of them. They will not be put to shame when they contend with their enemies in the gate."
+  }
+]

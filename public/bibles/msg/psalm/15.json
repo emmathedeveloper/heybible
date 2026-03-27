@@ -1,0 +1,37 @@
+[
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 15,
+    "verse": 1,
+    "text": "A David psalm. GOD, who gets invited to dinner at your place? How do we get on your guest list?"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 15,
+    "verse": 2,
+    "text": "\"Walk straight, act right, tell the truth."
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 15,
+    "verse": 3,
+    "text": "\"Don't hurt your friend, don't blame your neighbor;"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 15,
+    "verse": 4,
+    "text": "despise the despicable. \"Keep your word even when it costs you,"
+  },
+  {
+    "book_id": "PSA",
+    "book_name": "Psalm",
+    "chapter": 15,
+    "verse": 5,
+    "text": "make an honest living, never take a bribe. \"You'll never get blacklisted if you live like this.\""
+  }
+]
