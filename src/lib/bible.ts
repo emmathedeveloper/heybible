@@ -1,5 +1,7 @@
 import { create } from "zustand";
 
+const SUPPORTED_TRANSLATIONS = ['kjv' , 'web' , 'ylt']
+
 export type Verse = {
     book_id: string,
     book_name: string,
@@ -24,8 +26,6 @@ type BibleStoreType = {
     navigateToVerse: (direction: 'next' | 'previous' | 'jump', steps: number, target_verse?: number) => Promise<Verse>,
     setBibleVersion: (version: string) => void
 }
-
-const BibleCache = new Map<string, Verse[]>()
 
 const useBibleStore = create<BibleStoreType>((set, get) => ({
 
@@ -103,7 +103,10 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
     },
 
     async setBibleVersion(version: string) {
-        set({ activeVersion: version.toUpperCase() })
+
+        const v = SUPPORTED_TRANSLATIONS.find(v => v == version.toLowerCase()) || SUPPORTED_TRANSLATIONS[0]
+
+        set({ activeVersion: v.toUpperCase() })
 
         console.log(`Bible version set to: ${version.toUpperCase()}`);
         return { success: true, version: version.toUpperCase() };
