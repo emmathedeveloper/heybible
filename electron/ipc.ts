@@ -1,4 +1,4 @@
-import { BrowserWindow, desktopCapturer, ipcMain, session } from "electron"
+import { BrowserWindow, ipcMain } from "electron"
 import { createMainWindow, createProjectorWindow, windows } from "./window-management"
 import { LicenseManager } from "./license-manager"
 import { hostname, userInfo } from "node:os"
