@@ -1,4 +1,6 @@
+import DesignPaneAnimations from "./design-pane/animations"
 import DesignPaneBackgrounds from "./design-pane/backgrounds"
+import DesignPaneFonts from "./design-pane/fonts"
 import { AArrowDownIcon } from "./ui/a-arrow-down"
 import { GalleryHorizontalEndIcon } from "./ui/gallery-horizontal-end"
 import { SparklesIcon } from "./ui/sparkles"
@@ -25,10 +27,10 @@ const DesignPane = () => {
                     <DesignPaneBackgrounds />
                 </TabsContent>
                 <TabsContent value="fonts">
-
+                    <DesignPaneFonts />
                 </TabsContent>
                 <TabsContent value="animations">
-
+                    <DesignPaneAnimations />
                 </TabsContent>
             </Tabs>
         </div>

@@ -1,35 +1,26 @@
+import useDesignStore, { BACKGROUNDS } from "@/lib/design"
 import { cn } from "@/lib/utils"
-import { useEffect, useState } from "react"
 
-
-const BACKGROUNDS = [
-    './backgrounds/images/blob-scene.png',
-    './backgrounds/images/blob.png',
-    './backgrounds/images/circle-scatter.png',
-    './backgrounds/images/layered-steps.png',
-    './backgrounds/images/stacked-waves.png',
-    './backgrounds/images/wave.png',
-]
 
 const DesignPaneBackgrounds = () => {
 
-    const [activeBackground, setActiveBackground] = useState<string>(BACKGROUNDS[0])
+    const { background, update } = useDesignStore()
 
-    useEffect(() => {
-        if(activeBackground){
-            window.ipcRenderer.send("message:projector" , { type: 'CHANGE_BACKGROUND' , background: activeBackground })
-        }
-    } , [activeBackground])
+    const handleChangeBackground = (background: string) => {
+        update({ background })
+
+        window.ipcRenderer.send("message:projector", { type: 'CHANGE_BACKGROUND', background })
+    }
 
     return (
         <div className="size-full overflow-auto space-y-2">
             {BACKGROUNDS.map((b, i) => (
                 <div 
                 key={i}
-                onClick={() => setActiveBackground(b)}
+                onClick={() => handleChangeBackground(b)}
                 className={cn(
                     "flex items-center justify-center aspect-video rounded-xl overflow-hidden transition-all",
-                    { "border-4 border-primary p-2" : activeBackground == b }
+                    { "border-4 border-primary p-2" : background == b }
                 )}>
                     <img src={b} alt={b} className="size-full object-cover" />
                 </div>

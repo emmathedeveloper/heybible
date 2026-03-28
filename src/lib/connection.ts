@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { useUIStore } from './ui'
 import useBibleStore from './bible'
 import { useRecordingStore } from './recording'
+import { BACKGROUNDS } from './design'
 
 type ConnectionStore = {
   socket: WebSocket | null
@@ -20,17 +21,19 @@ export const useConnectionStore = create<ConnectionStore>((set, get) => ({
 
     socket.onopen = () => {
       set({ status: 'connected' })
-      window.ipcRenderer.send("open-projector")
+      window.ipcRenderer.invoke("open-projector").then(() => {
+        window.ipcRenderer.send("message:projector" , {type: "CHANGE_BACKGROUND" , background: BACKGROUNDS[0]})
+      })
     }
     socket.onclose = () => {
       set({ status: 'disconnected' })
       useRecordingStore.getState().stop()
-      window.ipcRenderer.send("close-projector")
+      window.ipcRenderer.invoke("close-projector")
     }
     socket.onerror = () => {
       set({ status: 'disconnected' })
       useRecordingStore.getState().stop()
-      window.ipcRenderer.send("close-projector")
+      window.ipcRenderer.invoke("close-projector")
     }
 
     socket.onmessage = (event) => {
@@ -64,7 +67,9 @@ export const useConnectionStore = create<ConnectionStore>((set, get) => ({
 
           case 'set_bible_version':
             console.log(data)
-            useBibleStore.getState().setBibleVersion(data.version)
+            useBibleStore.getState().setBibleVersion(data.version).then(verse => {
+              window.ipcRenderer.send('message:projector', { type: 'DISPLAY_VERSE', verse })
+            })
             break
         }
       }

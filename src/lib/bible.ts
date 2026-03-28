@@ -24,7 +24,7 @@ type BibleStoreType = {
 
     getBiblePassage: (book: string, chapter: number, verse?: number) => Promise<Verse>,
     navigateToVerse: (direction: 'next' | 'previous' | 'jump', steps: number, target_verse?: number) => Promise<Verse>,
-    setBibleVersion: (version: string) => void
+    setBibleVersion: (version: string) => Promise<Verse>
 }
 
 const useBibleStore = create<BibleStoreType>((set, get) => ({
@@ -104,12 +104,14 @@ const useBibleStore = create<BibleStoreType>((set, get) => ({
 
     async setBibleVersion(version: string) {
 
+        const { getBiblePassage, currentVerseNumber, currentBook, currentChapter } = get()
+
         const v = SUPPORTED_TRANSLATIONS.find(v => v.toLowerCase() == version.toLowerCase()) || SUPPORTED_TRANSLATIONS[0]
 
         set({ activeVersion: v.toUpperCase() })
 
         console.log(`Bible version set to: ${version.toUpperCase()}`);
-        return { success: true, version: version.toUpperCase() };
+        return await getBiblePassage(currentBook, currentChapter, currentVerseNumber);
     }
 }))
 

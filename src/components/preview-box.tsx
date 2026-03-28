@@ -55,7 +55,7 @@ const PreviewBox = () => {
                     <>
                         <VideoOffIcon className="size-20"/>
                         <h1 className="text-3xl font-black">Not Active Yet</h1>
-                        <p>You haven't started a session. Preview will be available once you do</p>
+                        <p className="text-center">You haven't started a session. Preview will be available once you do</p>
                     </>
             }
         </div>

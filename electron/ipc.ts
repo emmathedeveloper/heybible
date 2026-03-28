@@ -73,11 +73,13 @@ export const initIPC = () => {
     }
   })
 
-  ipcMain.on('open-projector', (_) => {
-    createProjectorWindow()
+  ipcMain.handle('open-projector', async (_) => {
+    await createProjectorWindow()
+
+    return
   })
 
-  ipcMain.on('close-projector', (_) => {
+  ipcMain.handle('close-projector', (_) => {
     windows.projector?.close()
   })
 
@@ -91,9 +93,5 @@ export const initIPC = () => {
 
   ipcMain.on('message:projector', (_, { type, ...data }) => {
     windows.projector?.webContents.send(type, data)
-  })
-
-  ipcMain.handle('get-projector-id', async (_) => {
-    
   })
 }
