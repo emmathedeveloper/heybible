@@ -3,9 +3,25 @@ import CurrentChapterPane from "@/components/current-chatper-pane"
 import DesignPane from "@/components/design-pane"
 import MainControlsPane from "@/components/main-controls-pane"
 import PreviewBox from "@/components/preview-box"
+import { useEffect } from "react"
+import toast from "react-hot-toast"
 import { SplitPane, Pane } from "react-split-pane"
 
 const ControlPanelView = () => {
+
+    useEffect(() => {
+
+        const handleProjectorClosed = () => {
+            toast.error('Projector window was closed!' , { duration: 5000 , position: 'bottom-left' })
+        }
+
+        window.ipcRenderer.on('projector-closed', handleProjectorClosed)
+
+        return () => {
+            window.ipcRenderer.off('projector-closed', handleProjectorClosed)
+        }
+    } , [])
+
     return (
         <div className='size-full'>
             <SplitPane

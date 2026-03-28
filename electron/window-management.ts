@@ -110,13 +110,20 @@ export async function createProjectorWindow() {
       preload: path.join(__dirname, 'preload.mjs'),
     },
     autoHideMenuBar: true,
-    titleBarStyle: 'hidden'
+    titleBarStyle: 'hidden',
+    ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {})
   })
 
   windows.projector.once('ready-to-show', () => {
-    windows.projector?.maximize(); // Maximize when ready to show
+    windows.projector?.maximize();
     windows.projector?.show();
   });
+
+  windows.projector.on('closed', (_: any) => {
+    windows.projector = null
+
+    windows.main?.webContents.send('projector-closed')
+  })
 
   if (VITE_DEV_SERVER_URL) {
     await windows.projector.loadURL(`${VITE_DEV_SERVER_URL}?view=projector`)
